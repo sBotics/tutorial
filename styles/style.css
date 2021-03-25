@@ -1,0 +1,108 @@
+/* Variables */
+:root {
+    --sidebar-background: #5c5663;
+    --sidebar-hover: #655f6b;
+    --body-background: #282739;
+    --foreground: #fff;
+    --accent: #45d5f3;
+    --sidebar-size: 300px;
+}
+
+/* Styles */
+body {
+    background-color: var(--body-background) !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.side-navigation {
+    background-color: var(--sidebar-background);
+}
+.side-navigation.hidden {
+    display: none;
+}
+.hamburger-menu.pressed {
+    background-color: var(--sidebar-hover);
+}
+.hamburger-menu.pressed:hover {
+    background-color: var(--sidebar-background);
+}
+.side-navigation .item {
+    width: 100%;
+    user-select: none;
+}
+.logo-spot {
+    text-align: center;
+}
+.logo-spot img {
+    width: 175px;
+}
+.side-navigation .category {
+    text-decoration: none;
+    display: block;
+    font-size: 15pt;
+    padding: 15px 0 15px 30px;
+    color: var(--foreground);
+    border-left: 10px solid transparent;
+    transition: all .3s ease-out;
+}
+.side-navigation .category:hover, .hamburger-menu:hover {
+    background-color: var(--sidebar-hover);
+}
+.side-navigation .category.selected {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.hamburger-menu {
+    background-color: var(--sidebar-background);
+    transition: all .3s ease-out;
+    color: var(--foreground);
+    text-align: center;
+    user-select: none;
+    padding: 15px 0;
+    font-size: 20pt;
+    cursor: pointer;
+    border: none;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .side-navigation.hidden {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+    .side-navigation {
+        width: var(--sidebar-size);
+    }
+    .content {
+        margin-left: var(--sidebar-size);
+        padding: 50px;
+        width: calc(100% - var(--sidebar-size));
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}
