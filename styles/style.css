@@ -1,8 +1,13 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
 
+@font-face {
+    font-family: SFpro;
+    src: url('fonts/SFpro.ttf');
+}
+
 /* Variables */
 :root {
-    --sidebar-background: #5c5663;
+    --sidebar-background: #282739;
     --sidebar-hover: #655f6b;
     --body-background: #282739;
     --foreground: #fff;
@@ -12,6 +17,7 @@
 
 /* Styles */
 body {
+    font-family: SFPro, sans-serif !important;
     background-color: var(--body-background) !important;
 }
 .category-card {
@@ -19,6 +25,9 @@ body {
 }
 .category-card .card {
     padding: 10px;
+}
+.logo-bold {
+    font-weight: 700;
 }
 .category-card img {
     position: absolute;
