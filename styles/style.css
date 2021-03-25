@@ -7,12 +7,24 @@
     --body-background: #282739;
     --foreground: #fff;
     --accent: #45d5f3;
-    --sidebar-size: 300px;
+    --sidebar-size: 235px;
 }
 
 /* Styles */
 body {
     background-color: var(--body-background) !important;
+}
+.category-card {
+    padding: 20px;
+}
+.category-card .card {
+    padding: 10px;
+}
+.category-card img {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    height: 70px;
 }
 .cursor-pointer{
     cursor: pointer;
@@ -66,14 +78,47 @@ body {
     cursor: pointer;
     border: none;
 }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
+.btn-instagram {
+    color: #fff !important;
+    background-color: #c32aa3 !important;
+    border-color: #b31993 !important;
 }
+.btn-instagram:hover {
+    color: #fff !important;
+    background-color: #b31993 !important;
+    border-color: #9e1482 !important;
+}
+.btn-discord {
+    color: #fff !important;
+    background-color: #7289da !important;
+    border-color: #6983de !important;
+}
+.btn-discord:hover {
+    color: #fff !important;
+    background-color: #6983de !important;
+    border-color: #667ed4 !important;
+}
+.btn-feedback {
+    color: #fff !important;
+    background-color: #e47d25 !important;
+    border-color: #dc731a !important;
+}
+.btn-feedback:hover {
+    color: #fff !important;
+    background-color: #dc731a !important;
+    border-color: #c56716 !important;
+}
+.access-links {
+    margin-bottom: 10px;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
     .side-navigation.hidden {
         display: block;
         position: fixed;
@@ -94,17 +139,8 @@ body {
     }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-}
-
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-}
+@media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-
-}
+@media (min-width: 1400px) {}
