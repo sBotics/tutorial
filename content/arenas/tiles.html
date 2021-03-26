@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sBotics Tutorial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles/style.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="side-navigation hidden">
+            <div class="item logo-spot pt-2 pb-2">
+                <a href="../../index.html">
+                    <img src="../../images/icon.png"/>
+                </a>    
+            </div>
+            <a href="../index.html" class="item category cursor-pointer">
+                <span class="EN">Home page</span>
+                <span class="PT-BR">Página Inicial</span>
+            </a>
+            <a href="../guide/getting_started.html" class="item category cursor-pointer">
+                <span class="EN">Getting started</span>
+                <span class="PT-BR">Primeiros passos</span>
+            </a>
+            <a href="index.html" class="item category cursor-pointer selected">
+                <span class="EN">Arenas</span>
+                <span class="PT-BR">Arenas</span>
+            </a>
+            <a href="../robots/index.html" class="item category cursor-pointer">
+                <span class="EN">Robots</span>
+                <span class="PT-BR">Robôs</span>
+            </a>
+            <a href="../programming/index.html" class="item category cursor-pointer">
+                <span class="EN">Programming</span>
+                <span class="PT-BR">Programação</span>
+            </a>
+        </div>
+        <div class="content">
+            <div class="jumbotron">
+                <div class="text-left">
+                    <h3 class="mb-0 font-weight-bold">Tiles</h3>
+                    <p>arenas:tiles</p>
+                </div>
+                <hr class="my-4"/>
+                <p>
+                    Tiles are the building blocks of any sBotics arena. Without tiles (with walls or lines), the robot has no way of finding a path towards a given goal.
+                    For that reason tiles are an integral part of the simulator and one with many different functionalities, which can be confusing for newcomers.
+                    Below, we'll discuss the different types of tiles and some of the properties that govern their simulated existence.   
+                </p>
+                <div class="p-3">
+                    <h5 class="font-weight-bold">Table of contents:</h5>
+                    <ol class="mb-0">
+                        <a href="#type"><li>Type</li></a>
+                        <ol class="mb-0">
+                            <a href="#std-tile">
+                                <li>Standard tile</li>
+                            </a>
+                            <a href="#tileset">
+                                <li>Tileset</li>
+                            </a>
+                            <a href="#intersections">
+                                <li>Intersections</li>
+                            </a>
+                            <a href="#maze">
+                                <li>Maze tiles</li>
+                            </a>
+                            <a href="#special">
+                                <li>Special tiles</li>
+                            </a>
+                            <ol class="mb-0">
+                                <a href="#rescue">
+                                    <li>Rescue zone</li>
+                                </a>
+                            </ol>
+                        </ol>
+                        <a href="#properties">
+                            <li>Properties</li>
+                        </a>
+                        <ol class="mb-0">
+                            <a href="#id">
+                                <li>ID</li>
+                            </a>
+                            <ol class="mb-0">
+                                <a href="#straight">
+                                    <li>Straight lines</li>
+                                </a>
+                                <a href="#curves">
+                                    <li>Curves</li>
+                                </a>
+                            </ol>
+                            <a href="#rotation">
+                                <li>Rotation</li>
+                            </a>
+                            <a href="#height">
+                                <li>Height</li>
+                            </a>
+                        </ol>
+                        <a href="#custom">
+                            <li>Custom</li>
+                        </a>
+                    </ol>
+                </div>
+                <h3 class="mt-3" id="type">Type</h3>
+                <hr class="my-2">
+                <p>
+                    Tiles come in many different types. These types serve slightly different functions in the arena.
+                </p>
+                <h4 class="mt-3" id="std-tile">Standard tile</h4>
+                <p>
+                    Standard tiles consist of simple straight lines and curves, usually without any scoring features. However, they are the only tiles in the simulator the user can place markers/checkpoints and Level 2 Rescue Kits can spawn.
+                </p>
+                <img src="../../images/arenas/simple.png" style="height: 150px;">
+                <h4 class="mt-3" id="tileset">Tileset</h4>
+                <p>
+                    Tilesets are collection of multiple tiles, indicated in the <a href="editor.html">editor</a> by a yellow overlay (seen below).
+                </p>
+                <img src="../../images/arenas/tileset.png" style="height: 150px;">
+                <p class="mb-0 mt-3">
+                    Tilesets have a slight chance to change each time the user or the simulator resets/reloads the arena, as can be seen below:
+                </p>
+                <img src="../../images/arenas/tileset.gif" style="height: 100px;">
+                <h4 class="mt-3" id="intersections">Intersections</h4>
+                <p>
+                    <p>
+                        Intersections are tiles consisting of multiple entrances, and its exit is entirely defined by which side of the tile the robot has entered. Below, some examples of intersections.
+                        These tiles usually contain a green square slightly under the line, indicating the correct way to go. If both sides of the line have a green square, it's indication that the robot has to turn backwards. 
+                        Below, some examples of how the entrance of an intersection determines its exit.
+                    </p>
+                    <img src="../../images/arenas/intersection1.gif" style="height: 150px;">
+                    <img src="../../images/arenas/intersection2.gif" style="height: 150px;">
+                    <img src="../../images/arenas/intersection3.gif" style="height: 150px;">
+                </p>
+                <h4 class="mt-3" id="maze">Maze tiles</h4>
+                <p>
+                    sBotics is also capable of creating Maze arenas, although maze rules are not yet supported.
+                </p>
+                <img src="../../images/arenas/maze.png" style="height: 300px;">
+                <h4 class="mt-3" id="special">Special tiles</h4>
+                <p>
+                    Special tiles are represented by a red overlay in the <a href="editor.html">editor</a>, as can be seen below. These can be starting or goal tiles, as well as the rescue zone (explained further below).
+                </p>
+                <img src="../../images/arenas/special.png" style="height: 100px;">
+                <p class="mt-3">
+                    The simulator does not support multiple special tiles of the same type, and an error tile will appear in the place of a special tile if another one of its type was already generated in the scenario.
+                </p>
+                <img src="../../images/arenas/error.png" style="height: 100px;">
+                <div class="ml-5">
+                    <h5 class="mt-3" id="rescue">Rescue zone</h5>
+                    <p>
+                        The rescue zone is perhaps the only truly "unique" tile of the simulator. It's the only 3x3 tile and it also has an entire section of the <a href="editor.html">arena editor</a> dedicated to it.
+                        The rescue zone's placing "pivot" is its center, and depending on how one configures the arena, it can also have a ramp and an exit. This tile is also capable of handling up to ten victims inside its walls,
+                        five live and five dead.
+                    </p>
+                    <img src="../../images/arenas/zone1.png" style="height: 200px;">
+                    <img src="../../images/arenas/zone2.png" style="height: 200px;">
+                </div>
+                <h3 class="mt-3" id="properties">Properties</h3>
+                <hr class="my-2">
+                Tiles are composed of many different properties, which help the simulator process and better understand its position and interaction with other tiles and the robot.
+                <h4 class="mt-3" id="id">ID</h4>
+                <p>
+                    The ID of a tile is represented by a number visible in the <a href="editor.html">Editor</a>. Tile IDs are separated in two categories: Curved and Straight lines.
+                    Therefore, tile IDs are not unique per tile, but unique per tile inside their given category.
+                    <div class="ml-5">
+                        <h5 class="mt-3" id="straight">Straight lines IDs (Work in progress)</h5>
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-primary btn-smbtn-primary " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Collapse/Expand
+                                </button>
+                                </h2>
+                            </div>
+                    
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 1)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 2)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 3)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 4)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 5)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 6)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 7)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 8)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 9)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 10)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 11)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 12)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 13)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 14)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 15)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 16)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 17)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 18)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 19)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 20)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 21)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 22)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 23)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 24)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 25)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 26)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 27)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 28)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 29)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 30)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 31)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 32)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 33)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 34)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 35)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 36)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 37)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 38)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 39)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 40)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 41)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 42)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 43)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 44)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="ml-5">
+                        <h5 class="mt-3" id="curves">Curves IDs (Work in progress)</h5>
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-primary btn-smbtn-primary " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapse/Expand
+                                </button>
+                                </h2>
+                            </div>
+                    
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                                <div class="card-body">
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 1)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 2)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 3)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 4)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 5)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 6)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 7)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 8)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 9)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 10)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 11)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 12)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 13)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 14)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 15)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 16)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 17)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 18)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 19)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 20)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 21)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 22)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 23)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 24)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 25)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 26)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card p-2 text-left mt-1 mb-1">
+                                        <div class="item-outer">
+                                            <div class="item-image-outer">
+                                                <img class="item-image" src="../../images/wip.png"/>
+                                            </div>
+                                            <div>
+                                                <span class="f-left">TileName (ID: 27)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+                <h4 class="mt-3" id="rotation">Rotation</h4>
+                <p>
+                    Tiles come in one of four different rotations, which can be changed manually in the <a href="editor.html">Editor</a> to all sorts of tiles (including special tiles such as the <i>Rescue Zone</i>) by pressing R:
+                </p>
+                    <ol start="0">
+                        <li><strong>0 degrees</strong></li>
+                        <li><strong>90 degrees</strong></li>
+                        <li><strong>180 degrees</strong></li>
+                        <li><strong>270 degrees</strong></li>
+                    </ol>
+                <p>
+                    The four states can be seen respectively in the image below:
+                </p>
+                <img src="../../images/arenas/rotations.png" style="height: 150px;">
+                <h4 class="mt-3" id="height">Height</h4>
+                <p>
+                    Tiles can come in 9 different height values, which can be manually adjusted in the <a href="editor.html">Editor</a> by pressing + and -. 
+                </p>
+                <img src="../../images/arenas/height.png" style="height: 200px;">
+                <h3 class="mt-3" id="custom">Custom</h3>
+                <hr class="my-2">
+                <p class="mb-1">
+                    While the simulator was being used as the main platform for the Brazilian RoboCupJr trials in 2020, many suggestions were made regarding tile customization, and many people went out of their way to create customized tiles with the few tools offered by sBotics at the time. Currently the simulator does not support customized tiles and many plans are already being discussed for its implementation. Hopefully when ready, will look something like this:
+                </p>
+                <code class="card p-3">
+                    "your_custom_tile": {
+                        "name": {
+                            "EN": "Name for your custom tile",
+                            "PT_BR": "Nome para seu ladrilho"
+                        },
+                        "texture": "http://texture.url",
+                        properties {
+                            ...
+                        }
+                    }
+                </code>
+                This is currently being drafted and will be implemented in the not-so-distant future.
+            </div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../../scripts/main.js"></script>
+    </body>
+</html>
