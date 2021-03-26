@@ -20,6 +20,13 @@ body {
     font-family: SFPro, sans-serif !important;
     background-color: var(--body-background) !important;
 }
+.info-ul li {
+    margin: 5px 0;
+}
+.actuator {
+    width: 100%;
+    float: right;
+}
 .category-card {
     padding: 20px;
 }
@@ -120,6 +127,18 @@ body {
 .access-links {
     margin-bottom: 10px;
 }
+.item-outer {
+    display: flex;
+}
+.item-outer div {
+    flex: 1;
+}
+.actuator-outer {
+    min-width: 50px;
+    max-width: 50px;
+    margin-right: 15px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {}
 
@@ -128,6 +147,24 @@ body {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .content.flex .jumbotron {
+        display: flex;
+    }
+    .main-panel, .side-panel {
+        flex: 1;
+    }
+    .side-panel {
+        min-width: 300px;
+        max-width: 300px;
+        margin-left: 32px;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
     .side-navigation.hidden {
         display: block;
         position: fixed;
@@ -147,9 +184,3 @@ body {
         width: calc(100% - var(--sidebar-size));
     }
 }
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
