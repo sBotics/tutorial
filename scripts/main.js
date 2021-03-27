@@ -1,17 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const language = urlParams.get('lang');
 
-// languages
-var PT_BR;
-var EN;
-
-$.getJSON("https://sbotics.github.io/tutorial/scripts/pt-br.json", function(json){
-    PT_BR = json;
-});
-$.getJSON("https://sbotics.github.io/tutorial/scripts/en.json", function(json){
-    EN = json;
-});
-
 $(document).ready(function() {
     $( ".hamburger-menu" ).click(function() {
         $( ".hamburger-menu" ).toggleClass( "pressed" );
@@ -26,14 +15,21 @@ $(document).ready(function() {
     });
 
     // changes text to the desired language
-    $( ".text" ).each(function() {
-        var location = $(this).html().split(':');
-        switch(language) {
-            case "pt-br":
-                $(this).html(PT_BR[location[0]][location[1]]);
-                break;
-            default:
-                $(this).html(EN[location[0]][location[1]]);
-        }
-    });
+    switch(language) {
+        case "pt-br":
+            $.getJSON("https://sbotics.github.io/tutorial/scripts/pt-br.json", function(json){
+                $( ".text" ).each(function() {
+                    var location = $(this).html().split(':');
+                    $(this).html(json[location[0]][location[1]]);
+                });
+            });
+            break;
+        default:
+            $.getJSON("https://sbotics.github.io/tutorial/scripts/en.json", function(json){
+                $( ".text" ).each(function() {
+                    var location = $(this).html().split(':');
+                    $(this).html(json[location[0]][location[1]]);
+                });
+            });
+    }
 });
