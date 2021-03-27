@@ -5,10 +5,10 @@ const language = urlParams.get('lang');
 var PT_BR;
 var EN;
 
-$.getJSON("./pt-br.json", function(json){
+$.getJSON("https://sbotics.github.io/tutorial/content/pt-br.json", function(json){
     PT_BR = json;
 });
-$.getJSON("./en.json", function(json){
+$.getJSON("https://sbotics.github.io/tutorial/content/en.json", function(json){
     EN = json;
 });
 
