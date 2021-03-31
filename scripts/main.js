@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     // changes text to the desired language
     switch(language) {
-        case "pt-br":
-            $.getJSON("https://sbotics.github.io/tutorial/scripts/pt-br.json", function(json){
+        case "pt_BR":
+            $.getJSON("https://sbotics.github.io/tutorial/scripts/pt_BR.json", function(json){
                 $( ".text" ).each(function() {
                     var location = $(this).html().split(':');
                     $(this).html(json[location[0]][location[1]]);
