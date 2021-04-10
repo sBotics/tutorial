@@ -23,6 +23,9 @@ body {
 .info-ul li {
     margin: 5px 0;
 }
+.w-enum-table {
+    width: 100%;
+}
 .item-image {
     width: 100%;
     float: right;
@@ -160,6 +163,9 @@ body {
         min-width: 300px;
         max-width: 300px;
         margin-left: 32px;
+    }
+    .w-enum-table {
+        width: 350px !important;
     }
 }
 
