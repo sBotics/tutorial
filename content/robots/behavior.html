@@ -33,44 +33,55 @@
                 <div class="p-3">
                     <h5 class="font-weight-bold">Table of contents:</h5>
                     <ol class="mb-0">
-                        <a href=""><li>Weight and speed</li></a>
-                        <a href=""><li>Bot controller</li></a>
-                        <a href=""><li>IO</li></a>
+                        <a href="#w-n-s"><li>Weight and speed</li></a>
+                        <a href="#bc"><li>Bot controller</li></a>
+                        <a href="#io"><li>IO</li></a>
                         <ol class="mb-0">
-                            <a href=""><li>Console</li></a>
-                            <a href=""><li>LED</li></a>
-                            <a href=""><li>Sensors</li></a>
+                            <a href="#console"><li>Console</li></a>
+                            <a href="#led"><li>LED</li></a>
+                            <a href="#sensors"><li>Sensors</li></a>
                         </ol>
                     </ol>
                 </div>
-                <h3 class="mt-3">Weight and speed</h3>
+                <h3 class="mt-3" id="w-n-s">Weight and speed</h3>
                 <hr class="my-2">
                 <p>
                     Weight is a property present in all robots. It governs how fast the robots move and how efficient they're able to climb slopes.
                     Usually, the bigger and more sensors any given robot has, the heavier it will be, forcing users to make a compromise between accuracy (of their readings) and speed.
                     The weight values of each robot are present in their respective pages.
                 </p>
-                <h3 class="mt-3">Bot controller</h3>
+                <h3 class="mt-3" id="bc">Bot controller</h3>
                 <hr class="my-2">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, tellus vel dignissim interdum, ante quam pharetra sapien, sit amet pretium eros enim in libero. Suspendisse in aliquam neque, dapibus aliquet mauris. Vivamus ultricies lorem eu ex tristique, ut lacinia elit convallis. Integer in eleifend nibh, nec fringilla tortor. Duis fermentum suscipit mi, quis facilisis mauris varius eu. Aenean ultricies leo in eros eleifend sagittis. Aliquam erat volutpat. Nulla facilisi. Ut ac pellentesque libero. Ut sollicitudin consectetur ornare. In ex dolor, imperdiet ac est ut, pulvinar feugiat turpis. Sed cursus urna et tincidunt ultrices.
+                    Bot controller (or bc) is the class that controls the virtual robot inside the simulator. Commands usually use the bc class instance.
+                    <p class="mt-3">
+                        <strong>Example: </strong><code>bc.wait(1000);</code>
+                    </p>
+
                 </p>
-                <h3 class="mt-3">IO</h3>
+                <h3 class="mt-3" id="#io">IO</h3>
                 <hr class="my-2">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, tellus vel dignissim interdum, ante quam pharetra sapien, sit amet pretium eros enim in libero. Suspendisse in aliquam neque, dapibus aliquet mauris. Vivamus ultricies lorem eu ex tristique, ut lacinia elit convallis. Integer in eleifend nibh, nec fringilla tortor. Duis fermentum suscipit mi, quis facilisis mauris varius eu. Aenean ultricies leo in eros eleifend sagittis. Aliquam erat volutpat. Nulla facilisi. Ut ac pellentesque libero. Ut sollicitudin consectetur ornare. In ex dolor, imperdiet ac est ut, pulvinar feugiat turpis. Sed cursus urna et tincidunt ultrices.
+                    Below are listed three ways information can be passed or shown to/by the robot.
                 </p>
-                <h4 class="mt-3">Console</h4>
+                <h4 class="mt-3" id="console">Console</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, tellus vel dignissim interdum, ante quam pharetra sapien, sit amet pretium eros enim in libero. Suspendisse in aliquam neque, dapibus aliquet mauris. Vivamus ultricies lorem eu ex tristique, ut lacinia elit convallis. Integer in eleifend nibh, nec fringilla tortor. Duis fermentum suscipit mi, quis facilisis mauris varius eu. Aenean ultricies leo in eros eleifend sagittis. Aliquam erat volutpat. Nulla facilisi. Ut ac pellentesque libero. Ut sollicitudin consectetur ornare. In ex dolor, imperdiet ac est ut, pulvinar feugiat turpis. Sed cursus urna et tincidunt ultrices.
+                    The console can be found on the sidebar menu, and all values printed to it will be shown there.
+                    <img src="../../images/robots/console.png" style="height: 60px;">
+                    <p>
+                        <img src="../../images/robots/console_open.png" style="height: 200px;">
+                    </p>
                 </p>
-                <h3 class="mt-3">LED</h3>
+                <h3 class="mt-3" id="led">LED</h3>
                 <p>
-                    Suspendisse eget ante quis nisi ultricies euismod quis ut velit. Quisque iaculis vitae felis ut rutrum. Aenean vulputate vulputate faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In mollis lacus a purus tincidunt ornare. Mauris dapibus consectetur dui, et pretium ipsum imperdiet ultricies. Cras volutpat ultrices nisi, sed consectetur lacus pharetra eget. Nam sit amet metus quis nulla porta tincidunt sit amet eu sem. Integer mollis interdum purus, a finibus ligula iaculis ut. Nunc ligula ex, venenatis sed diam ut, rhoncus fringilla arcu. Curabitur magna risus, imperdiet non libero eu, rhoncus dictum arcu. Sed euismod turpis id metus aliquet, eget venenatis velit venenatis. Nam rhoncus venenatis pharetra. Cras at metus ligula.
+                    The LED is a RGB light located at the top of the robot. The user can light one of the basic color values ("WHITE", "BLACK", "YELLOW", "MAGENTA", "GREEN", "BLUE", "CYAN", "RED") or a customizable RGB value from 0 to 255.
+                    <p>
+                        <img src="../../images/robots/LED.png" style="height: 250px;">
+                    </p>
                 </p>
-                <h3 class="mt-3">Sensors</h3>
+                <h3 class="mt-3" id="sensors">Sensors</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, tellus vel dignissim interdum, ante quam pharetra sapien, sit amet pretium eros enim in libero. Suspendisse in aliquam neque, dapibus aliquet mauris. Vivamus ultricies lorem eu ex tristique, ut lacinia elit convallis. Integer in eleifend nibh, nec fringilla tortor. Duis fermentum suscipit mi, quis facilisis mauris varius eu. Aenean ultricies leo in eros eleifend sagittis. Aliquam erat volutpat. Nulla facilisi. Ut ac pellentesque libero. Ut sollicitudin consectetur ornare. In ex dolor, imperdiet ac est ut, pulvinar feugiat turpis. Sed cursus urna et tincidunt ultrices.
+                    Sensors are the only input components for the bot controller, and are further described <a href="sensors.html">here</a>.
                 </p>
             </div>
         </div>
