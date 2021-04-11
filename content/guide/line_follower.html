@@ -146,15 +146,15 @@
                     If you wish to use variables to store the color values and make your code slightly more efficient you can do so this way:
                 </p>
                 <code class="d-block card mb-3 p-3">
-                    text right = ""<br/>
-                    text left = ""<br/><br/>
+                    text rightS = ""<br/>
+                    text leftS = ""<br/><br/>
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;right = color(1)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;left = color(2)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(1, right)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(2, left)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(right == "BLACK") then {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;rightS = color(1)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;leftS = color(2)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;write(1, rightS)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;write(2, leftS)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS == "BLACK") then {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
@@ -174,15 +174,15 @@
                 </p>
                 <code class="d-block card mb-3 p-3">
                     number calibration = 30<br/>
-                    number right = 0<br/>
-                    number left = 0<br/><br/>
+                    number rightS = 0<br/>
+                    number leftS = 0<br/><br/>
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;right = light(1)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;left = light(2)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(1, right)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(2, left)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(right &#60; calibration) then {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;rightS = light(1)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;leftS = light(2)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(1, rightS)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(2, leftS)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS &#60; calibration) then {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
