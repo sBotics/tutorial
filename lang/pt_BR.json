@@ -1,0 +1,68 @@
+{
+    "MENU": {
+        "Home page": "Página inicial",
+        "Getting started": "Primeiros passos",
+        "Arenas": "Arenas",
+        "Robots": "Robôs",
+        "Programming": "Programação"
+    },
+    "HOME": {
+        "Welcome to the official <span class=\"logo-bold\">sBotics</span> tutorial!": "Bem Vindo ao tutorial Oficial <span class=\"logo-bold\">sBotics</span>!",
+        "the guide written and maintained by the developers and users.": "o guia escrito e mantido pelos desenvolvedores e usuários da comunidade.",
+        "If you have any suggestions, create a pull request or open an issue on": "Se você tiver alguma sugestão, crie um pull request ou abra uma issue no ",
+        "Guides": "Guias",
+        "Getting started": "Começando",
+        "Your first line-follower in rEduc": "Seu primeiro seguidor de linha no rEduc",
+        "Importing/Exporting programs": "Programas de importação / exportação",
+        "Importing/Exporting textures": "Importando / Exportando texturas",
+        "Importing/Exporting arenas": "Importando / Exportando arenas",
+        "Creating your own theme": "Criando seu próprio tema",
+        "Contact us": "Contate-Nos",
+        "Feedback form": "Formulário de feedback"
+    },
+    "GUIDE": {
+        "GETTING_STARTED": {
+            "Getting started": "Primeiros passos",
+            "guide": "guia",
+            "Table of contents": "Índice",
+            "Installing the program": "Instalando o programa",
+            "Configuring launcher": "Configurando o iniciador",
+            "Authentication": "Authentication",
+            "Generating new arena": "Gerando nova arena",
+            "Choosing robot": "Escolhendo robô",
+            "Choosing a programming language": "Escolha de uma linguagem de programação",
+            "Which language to choose": "Qual idioma escolher",
+            "Next steps": "Próximos passos",
+            "To install sBotics you'll have to download our launcher in our": "Para instalar o sBotics, você terá que baixar o seu launcher em nosso",
+            "official website": "website oficial",
+            "Skip to": "Pule para",
+            "We are currently experimenting with full MacOS launcher support, and thus sadly the simulator has to be redownloaded manually each and every update. First download the application from our": "No momento, estamos testando o suporte completo para o iniciador MacOS e, portanto, infelizmente, o simulador deve ser baixado manualmente a cada atualização. Primeiro baixe o aplicativo de nosso",
+            "<kbd>Click</kbd>": "<kbd>Clique</kbd>",
+            "the file and press \"open\"": "o arquivo e pressione \"abrir\"",
+            "And voilà, the simulator is now open": "E olha só!, o simulador está aberto agora",
+            "": "",
+            "": "",
+            "": ""
+        }
+    },
+    "ARENAS": {
+        "Arenas": "Arenas",
+        "Tiles": "Ladrilhos",
+        "Editor": "Editor",
+        "Code": "Código"
+    },
+    "ROBOTS": {
+        "Robots": "Robôs",
+        "Behavior": "Comportamento",
+        "Rescuelance": "",
+        "SPC-Rover": "",
+        "Firetrekker": "",
+        "Toybot": "",
+        "RoboTruck": "",
+        "Sensors": "Sensores"
+    },
+    "PROGRAMMING": {
+        "Programming": "Programação",
+        "Coming soon": "Em breve"
+    }
+}
