@@ -19,29 +19,102 @@ const ControllerTag = (tagName, fn) => {
 const ValidationLang = () => {
     var langValid = ["pt_BR"];
     if (langValid.indexOf(getLang) != -1) return getLang;
-    else return "en";
+    else {
+        if (getLang != "" && getLang != null) return getLang;;
+        const languageSystem = navigator.language;
+        var replace_caracter = languageSystem.replace("-", "_");
+        if (langValid.indexOf(replace_caracter) != -1) return replace_caracter;
+        else return "en";
+    }
+
 };
+
+$("a").each(function() {
+    var href = $(this).attr("href");
+    const language = ValidationLang();
+    if (href[0] != "#") $(this).attr("href", href + "?lang=" + language);
+});
 
 const Language = (element) => {
     const ValidLang = ValidationLang();
     var text = element.attributes.text.value;
+    try {
+        var possitionInner = element.attributes.position.value;
+    } catch (error) {
+        var possitionInner = "";
+    }
     const l = text.split(":");
     if (ValidLang != "en") {
         $.getJSON(`${pathOrigin}/lang/${ValidLang}.json`, function(json) {
             var t = "";
             for (let i = 0; i < l.length; i++) {
                 const e = l[i];
-                if (i == 0) t = json[e]
-                else t = t[e]
+                const n = l[i + 1];
+                if (i == 0) t = json[e];
+                else {
+                    if (
+                        e.substr(-2, 2) == "[{" &&
+                        n.substr(-n.length, 2) == "}]"
+                    ) {
+                        const re = e.replace("[{", "");
+                        const rn = n.replace("}]", "");
+                        const te = `${re}:${rn}`;
+                        t = t[te];
+                        i++;
+                        if (i == l.length) break;
+                    } else {
+                        t = t[e];
+                    }
+                }
             }
             if (t === undefined || t == "") {
-                element.innerHTML = l[l.length - 1];
+                const ou = l[l.length - 2];
+                const u = l[l.length - 1];
+
+                if (u.substr(-u.length, 2) == "}]") {
+                    const re = ou.replace("[{", "");
+                    const rn = u.replace("}]", "");
+                    const te = `${re}:${rn}`;
+                    if (possitionInner == "left")
+                        element.innerHTML = `${te}${element.innerHTML}`;
+                    else if (possitionInner == "right")
+                        element.innerHTML = `${element.innerHTML}${te}`;
+                    else element.innerHTML = te;
+                } else {
+                    if (possitionInner == "left")
+                        element.innerHTML = `${u}${element.innerHTML}`;
+                    else if (possitionInner == "right")
+                        element.innerHTML = `${element.innerHTML}${u}`;
+                    else element.innerHTML = u;
+                }
             } else {
-                element.innerHTML = t;
+                if (possitionInner == "left")
+                    element.innerHTML = `${t}${element.innerHTML}`;
+                else if (possitionInner == "right")
+                    element.innerHTML = `${element.innerHTML}${t}`;
+                else element.innerHTML = t;
             }
         });
     } else {
-        element.innerHTML = l[l.length - 1];
+        const ou = l[l.length - 2];
+        const u = l[l.length - 1];
+
+        if (u.substr(-u.length, 2) == "}]") {
+            const re = ou.replace("[{", "");
+            const rn = u.replace("}]", "");
+            const te = `${re}:${rn}`;
+            if (possitionInner == "left")
+                element.innerHTML = `${te}${element.innerHTML}`;
+            else if (possitionInner == "right")
+                element.innerHTML = `${element.innerHTML}${te}`;
+            else element.innerHTML = te;
+        } else {
+            if (possitionInner == "left")
+                element.innerHTML = `${u}${element.innerHTML}`;
+            else if (possitionInner == "right")
+                element.innerHTML = `${element.innerHTML}${u}`;
+            else element.innerHTML = u;
+        }
     }
 };
 

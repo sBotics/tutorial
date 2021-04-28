@@ -1,92 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
-            </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="../arenas/index.html" class="text item category cursor-pointer">MENU:ARENAS</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="text-left">
-                    <h3 class="mb-0 font-weight-bold">Behavior</h3>
-                    <p>robots:behavior</p>
-                </div>
-                <hr class="my-4"/>
-                <div class="p-3">
-                    <h5 class="font-weight-bold">Table of contents:</h5>
-                    <ol class="mb-0">
-                        <a href="#w-n-s"><li>Weight and speed</li></a>
-                        <a href="#bc"><li>Bot controller</li></a>
-                        <a href="#io"><li>IO</li></a>
-                        <ol class="mb-0">
-                            <a href="#console"><li>Console</li></a>
-                            <a href="#led"><li>LED</li></a>
-                            <a href="#sensors"><li>Sensors</li></a>
-                        </ol>
-                    </ol>
-                </div>
-                <h3 class="mt-3" id="w-n-s">Weight and speed</h3>
-                <hr class="my-2">
-                <p>
-                    Weight is a property present in all robots. It governs how fast the robots move and how efficient they're able to climb slopes.
-                    Usually, the bigger and more sensors any given robot has, the heavier it will be, forcing users to make a compromise between accuracy (of their readings) and speed.
-                    The weight values of each robot are present in their respective pages.
-                </p>
-                <h3 class="mt-3" id="bc">Bot controller</h3>
-                <hr class="my-2">
-                <p>
-                    Bot controller (or bc) is the class that controls the virtual robot inside the simulator. Commands usually use the bc class instance.
-                    <p class="mt-3">
-                        <strong>Example: </strong><code>bc.wait(1000);</code>
-                    </p>
 
-                </p>
-                <h3 class="mt-3" id="#io">IO</h3>
-                <hr class="my-2">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
+        </div>
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="../arenas/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer ">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="text-left">
+                <h3 class="mb-0 font-weight-bold">
+                    <lang text="ROBOTS:BEHAVIOR:Behavior" />
+                </h3>
                 <p>
-                    Below are listed three ways information can be passed or shown to/by the robot.
-                </p>
-                <h4 class="mt-3" id="console">Console</h4>
-                <p>
-                    The console can be found on the sidebar menu, and all values printed to it will be shown there.
-                    <img src="../../images/robots/console.png" style="height: 60px;">
-                    <p>
-                        <img src="../../images/robots/console_open.png" style="height: 200px;">
-                    </p>
-                </p>
-                <h3 class="mt-3" id="led">LED</h3>
-                <p>
-                    The LED is a RGB light located at the top of the robot. The user can light one of the basic color values ("WHITE", "BLACK", "YELLOW", "MAGENTA", "GREEN", "BLUE", "CYAN", "RED") or a customizable RGB value from 0 to 255.
-                    <p>
-                        <img src="../../images/robots/LED.png" style="height: 250px;">
-                    </p>
-                </p>
-                <h3 class="mt-3" id="sensors">Sensors</h3>
-                <p>
-                    Sensors are the only input components for the bot controller, and are further described <a href="sensors.html">here</a>.
+                    <lang text="ROBOTS:BEHAVIOR:robots[{:}]behavior" />
                 </p>
             </div>
+            <hr class="my-4" />
+            <div class="p-3">
+                <h5 class="font-weight-bold">
+                    <lang text="ROBOTS:BEHAVIOR:Table of contents" position="left">:</lang>
+                </h5>
+                <ol class="mb-0">
+                    <a href="#w-n-s">
+                        <li>
+                            <lang text="ROBOTS:BEHAVIOR:Weight and speed" />
+                        </li>
+                    </a>
+                    <a href="#bc">
+                        <li>
+                            <lang text="ROBOTS:BEHAVIOR:Bot controller" />
+                        </li>
+                    </a>
+                    <a href="#io">
+                        <li>
+                            <lang text="ROBOTS:BEHAVIOR:IO" />
+                        </li>
+                    </a>
+                    <ol class="mb-0">
+                        <a href="#console">
+                            <li>
+                                <lang text="ROBOTS:BEHAVIOR:Console" />
+                            </li>
+                        </a>
+                        <a href="#led">
+                            <li>
+                                <lang text="ROBOTS:BEHAVIOR:LED" />
+                            </li>
+                        </a>
+                        <a href="#sensors">
+                            <li>
+                                <lang text="ROBOTS:BEHAVIOR:Sensors" />
+                            </li>
+                        </a>
+                    </ol>
+                </ol>
+            </div>
+            <h3 class="mt-3" id="w-n-s">
+                <lang text="ROBOTS:BEHAVIOR:Weight and speed" />
+            </h3>
+            <hr class="my-2">
+            <p>
+                <lang text="ROBOTS:BEHAVIOR:Weight is a property present in all robots. It governs how fast the robots move and how efficient they're able to climb slopes. Usually, the bigger and more sensors any given robot has, the heavier it will be, forcing users to make a compromise between accuracy (of their readings) and speed. The weight values of each robot are present in their respective pages.">
+                </lang>
+            </p>
+            <h3 class="mt-3" id="bc">
+                <lang text="ROBOTS:BEHAVIOR:Bot controller" />
+            </h3>
+            <hr class="my-2">
+            <p>
+                <lang text="ROBOTS:BEHAVIOR:Bot controller (or bc) is the class that controls the virtual robot inside the simulator. Commands usually use the bc class instance.">
+                </lang>
+                <p class="mt-3">
+                    <lang text="ROBOTS:BEHAVIOR:<strong>Example[{:}] </strong><code>bc.wait(1000);</code>" />
+                </p>
+            </p>
+            <h3 class="mt-3" id="#io">
+                <lang text="ROBOTS:BEHAVIOR:IO" />
+            </h3>
+            <hr class="my-2">
+            <p>
+                <lang text="ROBOTS:BEHAVIOR:Below are listed three ways information can be passed or shown to/by the robot.">
+                </lang>
+            </p>
+            <h4 class="mt-3" id="console">
+                <lang text="ROBOTS:BEHAVIOR:Console" />
+            </h4>
+            <p>
+                <lang text="ROBOTS:BEHAVIOR:The console can be found on the sidebar menu, and all values printed to it will be shown there.">
+                </lang>
+                <img src="../../images/robots/console.png" style="height: 60px;">
+                <p>
+                    <img src="../../images/robots/console_open.png" style="height: 200px;">
+                </p>
+            </p>
+            <h3 class="mt-3" id="led">
+                <lang text="ROBOTS:BEHAVIOR:LED" />
+            </h3>
+            <p>
+                <lang text='ROBOTS:BEHAVIOR:The LED is a RGB light located at the top of the robot. The user can light one of the basic color values ("WHITE", "BLACK", "YELLOW", "MAGENTA", "GREEN", "BLUE", "CYAN", "RED") or a customizable RGB value from 0 to 255.'>
+                </lang>
+                <p>
+                    <img src="../../images/robots/LED.png" style="height: 250px;">
+                </p>
+            </p>
+            <h3 class="mt-3" id="sensors">
+                <lang text="ROBOTS:BEHAVIOR:Sensors" />
+            </h3>
+            <p>
+                <lang text='ROBOTS:BEHAVIOR:Sensors are the only input components for the bot controller, and are further described <a href="sensors.html">here</a>.'>
+                </lang>
+            </p>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>

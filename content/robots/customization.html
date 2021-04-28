@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="../arenas/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer ">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="text-left">
+                <h3 class="mb-0 font-weight-bold">
+                    <lang text="ROBOTS:CUSTOMIZATION:Customization" />
+                </h3>
+                <p>
+                    <lang text="ROBOTS:CUSTOMIZATION:robots[{:}]customization" />
+                </p>
             </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="../arenas/index.html" class="text item category cursor-pointer">MENU:ARENAS</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
+            <hr class="my-4" />
+            <lang text="ROBOTS:CUSTOMIZATION:Robot customization is a work in progress feature, currently half-completed and should be implemented in the next several updates." />
         </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="text-left">
-                    <h3 class="mb-0 font-weight-bold">Customization</h3>
-                    <p>robots:customization</p>
-                </div>
-                <hr class="my-4"/>
-                Robot customization is a work in progress feature, currently half-completed and should be implemented in the next several updates.
-            </div>
-        </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>

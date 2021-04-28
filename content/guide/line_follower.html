@@ -1,114 +1,148 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="guide/getting_started.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="../arenas/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="text-left">
+                <h3 class="mb-0 font-weight-bold">
+                    <lang text="GUIDE:LINE_FOLLOWER:Your first line follower in rEduc"></lang>
+                </h3>
+                <p>
+                    <lang text="GUIDE:LINE_FOLLOWER:guide[{:}]line_follower"></lang>
+                </p>
             </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="../arenas/index.html" class="text item category cursor-pointer">MENU:ARENAS</a>
-            <a href="../robots/index.html" class="text item category cursor-pointer">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="text-left">
-                    <h3 class="mb-0 font-weight-bold">Your first line follower in rEduc</h3>
-                    <p>guide:line_follower</p>
-                </div>
-                <hr class="my-4"/>
-                <p>
-                    If you want to know the basic features of the simulator, you may want to read our <a href="getting_started.html">getting started</a> tutorial.
-                </p>
-                <p>
-                    After authenticating and choosing your favorite robot to make the line follower you'll have to create your first program.
-                    For this tutorial I'll be using Rescuelance, the first and default robot.
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/chosen_robot.png" style="height: 350px;">
-                </p>
-                <p>
-                    Now take a look at the robot tab to see the sensors and their indexes. As you can see from the image below, the right sensor has the index 1 and the left sensor has 2. 
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/indexes.png" style="height: 250px;">
-                </p>
-                <p>
-                    Now open the programming tab and make sure you are programming in rEduc (this is shown below the first time you open the tab or change languages):
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/coding_in.png" style="height: 50px;">
-                </p>
-                <p>
-                    Now let's make a simple program. To test, execute this very simple program that should make the robot move forward with strength value 60:
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <hr class="my-4" />
+            <p>
+                <lang text='GUIDE:LINE_FOLLOWER:If you want to know the basic features of the simulator, you may want to read our <a href="getting_started.html">getting started</a> tutorial.'>
+                </lang>
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:After authenticating and choosing your favorite robot to make the line follower you'll have to create your first program. For this tutorial I'll be using Rescuelance, the first and default robot.">
+                </lang>
+            </p>
+            <p>
+                <img src="../../images/guides/line_follower/chosen_robot.png " style="height: 350px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:Now take a look at the robot tab to see the sensors and their indexes. As you can see from the image below, the right sensor has the index 1 and the left sensor has 2.">
+                </lang>
+            </p>
+            <p>
+                <img src="../../images/guides/line_follower/indexes.png " style="height: 250px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:Now open the programming tab and make sure you are programming in rEduc (this is shown below the first time you open the tab or change languages)">
+                    :
+                </lang>
+            </p>
+            <p>
+                <img src="../../images/guides/line_follower/coding_in.png " style="height: 50px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:Now let's make a simple program. To test, execute this very simple program that should make the robot move forward with strength value 60">
+                    :
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;forward(60)<br/>
                     end<br/>
                 </code>
-                <p>
-                    As you can see, this didn't move the robot forward at all. And if it actually did, it was only for 1 milisecond. 
-                    For the robot to move forward for <i>a period of time</i> instead of a fraction of a second, the state of the motor has to stay put for a while.
-                    In this case, we will use the <code>wait(number)</code> function.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:As you can see, this didn't move the robot forward at all. And if it actually did, it was only for 1 milisecond. For the robot to move forward for <i>a period of time</i> instead of a fraction of a second, the state of the motor has to stay put for a while. In this case, we will use the <code>wait(number)</code> function.">
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;forward(60)<br/>
                     &nbsp;&nbsp;wait(2000)<br/>
                     end<br/>
                 </code>
-                <p>
-                    As you can see, the robot moved for 2 seconds (or 2000 miliseconds) before stopping the program.
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/run-stop.gif" style="height: 200px;">
-                </p>
-                <p>
-                    In order to make a line-follower the program has to repeat itself indefinitely (that is, as long as the program is being executed).
-                    To do this we will be creating a simple loop using while.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:As you can see, the robot moved for 2 seconds (or 2000 miliseconds) before stopping the program.">
+                </lang>
+            </p>
+            <p>
+                <img src="../../images/guides/line_follower/run-stop.gif " style="height: 200px; ">
+            </p>
+            <p>
+                <lang text="In order to make a line-follower the program has to repeat itself indefinitely (that is, as long as the program is being executed). To do this we will be creating a simple loop using while.">
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
                     &nbsp;&nbsp;}<br/>
                     end<br/>
                 </code>
-                <p>
-                    The code above will repeat itself indefinitely, and it literally reads as: "while the condition "true" is true, do: ".
-                    <br>Now let's move the robot forward.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <lang text='GUIDE:LINE_FOLLOWER:The code above will repeat itself indefinitely, and it literally reads as[{:}]'>
+                </lang>
+                <lang text='GUIDE:LINE_FOLLOWER:"while the condition "true" is true, do[{:}] ".'></lang>
+                <lang text="GUIDE:LINE_FOLLOWER:<br>Now let's move the robot forward."></lang>
+                <lang text="GUIDE:LINE_FOLLOWER:The code above will run the robot forward (for 1 milisecond) indefinitely.">
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
                     &nbsp;&nbsp;}<br/>
                     end<br/>
                 </code>
-                <p>
-                    The code above will run the robot forward (for 1 milisecond) indefinitely.
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/indefinitely.gif" style="height: 300px;">
-                </p>
-                <p>
-                    Now let's read the color values seen by each sensor using the <code>write</code> function.
-                    Let's print the right sensor's value on the first console line and the left sensor's on the second.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <img src="../../images/guides/line_follower/indefinitely.gif " style="height: 300px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:Now let's read the color values seen by each sensor using the <code>write</code> function. Let's print the right sensor's value on the first console line and the left sensor's on the second.">
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;write(1, color(1))<br/>
@@ -118,26 +152,29 @@
                     &nbsp;&nbsp;}<br/>
                     end<br/>
                 </code>
-                <p>
-                    To open the console window, click on the "terminal" icon present in the left sidebar: <img src="../../images/guides/line_follower/console.png" style="height: 50px;"/>
-                </p>
-                <p>
-                    As you can see, the sensor sees different color values and prints them on the console. Now we can use this to our advantage.
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/color values.gif" style="height: 300px;">
-                </p>
-                <p>
-                    With a simpler arena this time, let's make the robot turn turn right when the right sensor (1) perceives "BLACK".
-                    To do this, we will use the conditional if.
-                    <br/><b>Note!</b> Moving sideways causes more friction and the strength of the motors may have to be raised in contrast to their forward/backwards counterparts.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <lang text='GUIDE:LINE_FOLLOWER:To open the console window, click on the "terminal" icon present in the left sidebar'>
+                </lang>: <img src="../../images/guides/line_follower/console.png " style="height: 50px; " />
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:As you can see, the sensor sees different color values and prints them on the console. Now we can use this to our advantage.">
+                </lang>
+            </p>
+            <p>
+                <img src="../../images/guides/line_follower/color values.gif " style="height: 300px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:With a simpler arena this time, let's make the robot turn turn right when the right sensor (1) perceives">
+                </lang>
+                <lang text='GUIDE:LINE_FOLLOWER:"BLACK". To do this, we will use the conditional if. <br /><b>Note!</b> Moving sideways causes more friction and the strength of the motors may have to be raised in contrast to their forward/backwards counterparts.'>
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;write(1, color(1))<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;write(2, color(2))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(color(1) == "BLACK") then {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(color(1) == "BLACK ") then {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
@@ -145,19 +182,20 @@
                     &nbsp;&nbsp;}<br/>
                     end<br/>
                 </code>
-                <p>
-                    If you wish to use variables to store the color values and make your code slightly more efficient you can do so this way:
-                </p>
-                <code class="d-block card mb-3 p-3">
-                    string rightS = ""<br/>
-                    string leftS = ""<br/><br/>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:If you wish to use variables to store the color values and make your code slightly more efficient you can do so this way">
+                </lang>:
+            </p>
+            <code class=" d-block card mb-3 p-3 ">
+                    string rightS = " "<br/>
+                    string leftS = " "<br/><br/>
                     begin<br/>
                     &nbsp;&nbsp;while (true) do {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;rightS = color(1)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;leftS = color(2)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;write(1, rightS)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;write(2, leftS)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS == "BLACK") then {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS == "BLACK ") then {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
@@ -165,17 +203,20 @@
                     &nbsp;&nbsp;}<br/>
                     end<br/>
                 </code>
-                <p>
-                    As you can see, now the robot follows the line (although only forwards and on right turns):
-                </p>
-                <p>
-                    <img src="../../images/guides/line_follower/followingline.gif" style="height: 450px;">
-                </p>
-                <p>
-                    <code>color()</code> can be limiting, specially if you want to calibrate your robot to different lighting setttings. The same code above can be rewritten with <code>light</code> as:
-                    <br/><b>Tip!</b> Try making auto-calibration algorithms. Depending on the "time of day" the robot can stop functioning altogether due to poor calibration.
-                </p>
-                <code class="d-block card mb-3 p-3">
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:As you can see, now the robot follows the line (although only forwards and on right turns)">
+                </lang>:
+            </p>
+            <p>
+                <img src=" ../../images/guides/line_follower/followingline.gif " style="height: 450px; ">
+            </p>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:<code>color()</code> can be limiting, specially if you want to calibrate your robot to different lighting setttings. The same code above can be rewritten with <code>light</code> as[{:}]<br /><b>Tip!</b> Try making auto-calibration algorithms. ">
+                </lang>
+                <lang text='GUIDE:LINE_FOLLOWER:Depending on the "time of day " the robot can stop functioning altogether due to poor calibration.'>
+                </lang>
+            </p>
+            <code class="d-block card mb-3 p-3 ">
                     number calibration = 30<br/>
                     number rightS = 0<br/>
                     number leftS = 0<br/><br/>
@@ -193,17 +234,22 @@
                     &nbsp;&nbsp;}<br/>
                     end
                 </code>
-                <p>
-                    Now it's up to you to make a complete line-follower and more complex algorithms. Experiment with sBotics and join our <a href="https://discord.gg/PubzWWjzuz">community on discord</a>.
-                    There are loads of people there that would like to help you in your journey.
-                </p>
-                <p>
-                    If you wish to view all rEduc or C# functions, <a href="https://sbotics.weduc.natalnet.br/functions">click here</a>.
-                </p>
-            </div>
+            <p>
+                <lang text="GUIDE:LINE_FOLLOWER:Now it's up to you to make a complete line-follower and more complex algorithms.">
+                </lang>
+                <lang text='GUIDE:LINE_FOLLOWER:Experiment with sBotics and join our <a href="https[{:}]//discord.gg/PubzWWjzuz ">community on discord</a>. There are loads of people there that would like to help you in your journey.'>
+                </lang>
+            </p>
+            <p>
+                <lang text='GUIDE:LINE_FOLLOWER:If you wish to view all rEduc or C# functions, <a href="https[{:}]//sbotics.weduc.natalnet.br/functions">click here</a>.'>
+                </lang>
+            </p>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="../../scripts/require.js "></script>
+    <script src="../../scripts/main.js "></script>
+    <script src="../../scripts/language.js "></script>
+</body>
+
 </html>
