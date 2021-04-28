@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
-            </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="../arenas/index.html" class="text item category cursor-pointer">MENU:ARENAS</a>
-            <a href="../robots/index.html" class="text item category cursor-pointer">MENU:ROBOTS</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="row">
-                    <div class="offset-lg-4 col-lg-4 category-card">
-                        <div class="card">
-                            <img src="../../images/categories/source.png"/>
-                            <h4>Programming</h4>
-                            <hr class="mt-0"/>
-                            <div class="row access-links">
-                                <div class="col-lg-6">
-                                    <i class="ml-3"><i class="fas fa-clock d-inline-block mr-2"></i>Coming soon</i>
-                                </div>
-                                <div class="col-lg-6">
-                                    <i class="ml-3"><i class="fas fa-clock d-inline-block mr-2"></i>Coming soon</i>
-                                </div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
-                                <div class="col-lg-6">&nbsp;</div>
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="../arenas/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="offset-lg-4 col-lg-4 category-card">
+                    <div class="card">
+                        <img src="../../images/categories/source.png" />
+                        <h4>
+                            <lang text="PROGRAMMING:Programming" />
+                        </h4>
+                        <hr class="mt-0" />
+                        <div class="row access-links">
+                            <div class="col-lg-6">
+                                <i class="ml-3"><i class="fas fa-clock d-inline-block mr-2"></i>
+                                <lang text="PROGRAMMING:Coming soon" />
+                                </i>
                             </div>
+                            <div class="col-lg-6">
+                                <i class="ml-3"><i class="fas fa-clock d-inline-block mr-2"></i>
+                                <lang text="PROGRAMMING:Coming soon" />
+                                </i>
+                            </div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
+                            <div class="col-lg-6">&nbsp;</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>
