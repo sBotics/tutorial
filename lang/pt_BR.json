@@ -166,6 +166,32 @@
             "The compass sensor returns a value from 0 to 359 of the robot's perceived position.": "O sensor da bússola retorna um valor de 0 a 359 da posição percebida do robô.",
             "The gyroscope returns the perceived robot inclination.": "O giroscópio retorna a inclinação percebida do robô.",
             "Returns the perceived heat. Candles and Live Victims.": "Retorna o calor percebido. Velas e vítimas vivas."
+        },
+        "RESCUELANCE": {
+            "Rescuelance": "",
+            "robots:rescuelance": "robôs:rescuelance",
+            "Rescuelance is one of the five preset robots present on the simulator. It consists of 3 color sensors (where two are down-facing).": "O Rescuelance é um dos cinco robôs predefinidos presentes no simulador. É composto por 3 sensores de cor (sendo dois voltados para baixo).",
+            "Table of contents": "Índice",
+            "Notes": "Notas",
+            "Trivia": "Curiosidades",
+            "Feel like expanding this article? Suggest your own texts and changes on github or ": "Quer expandir este artigo? Sugira seus próprios textos e mudanças no github ou em ",
+            "<a href=\"https://discord.gg/PubzWWjzuz\">our discord server</a>": "nosso servidor discord",
+            "The name comes from its default texture: A \"Rescue Ambulance\"": "O nome vem de sua textura padrão: A \"Ambulância de resgate \"",
+            "The number 193 in its sides are a reference to Brazil's emergency services number.": "O número 193 nas laterais é uma referência ao número do serviço de emergência do Brasil.",
+            "Info.": "Informações.",
+            "Weight": "Peso",
+            "LED(s)": "",
+            "Light/color sensor(s)": "Sensor(es) de luz/cor",
+            "Refresh rate": "Taxa de atualização",
+            "Buzzer(s)": "Alto falante(s)",
+            "Touch sensor(s)": "Sensor(es) de toque",
+            "Ultrasonic sensor(s)": "Sensor(es) ultrassônico",
+            "Actuators": "Atuadores",
+            "Bulldozer": "",
+            "Forklift": "Empilhadeira",
+            "Reduced range forklift": "empilhadeira de alcance reduzido",
+            "Frontal forklift": "Empilhadeira frontal",
+            "Rear bulldozer": "bulldozer traseiro"
         }
     },
     "PROGRAMMING": {

@@ -2,10 +2,12 @@ const urlParams = new URLSearchParams(window.location.search);
 const getLang = urlParams.get("lang");
 
 var pathOrigin = window.location.origin;
-const deploy = false;
+const deploy = true;
 
 if (pathOrigin == "http://localhost" || deploy == false) {
     pathOrigin = `${pathOrigin}/sBotics_Projetos/tutorial`;
+} else {
+    pathOrigin = `${pathOrigin}/tutorial`;
 }
 
 const ControllerTag = (tagName, fn) => {
