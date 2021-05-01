@@ -192,6 +192,19 @@
             "Reduced range forklift": "empilhadeira de alcance reduzido",
             "Frontal forklift": "Empilhadeira frontal",
             "Rear bulldozer": "bulldozer traseiro"
+        },
+        "SPC-ROVER": {
+            "SPC-Rover": "",
+            "robots:spc_rover": "robôs:spc-rover",
+            "SPC-Rover is one of the five preset robots present on the simulator. It consists of 6 color sensors (where five are down-facing).": "",
+            "Table of contents": "Índice",
+            "Notes": "Notas",
+            "Trivia": "Curiosidades",
+            "Feel like expanding this article? Suggest your own texts and changes on github or ": "Quer expandir este artigo? Sugira seus próprios textos e mudanças no github ou em ",
+            "<a href=\"https://discord.gg/PubzWWjzuz\">our discord server</a>": "nosso servidor discord",
+            "The name derives from \"Space Rover\"": "",
+            "This robot was originally designed as a military autonomous vehicle.": "",
+            "": ""
         }
     },
     "PROGRAMMING": {
