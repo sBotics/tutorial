@@ -81,7 +81,6 @@ const Language = (elementTag) => {
     const textSplit = textTag.split(":");
     const textLength = textSplit.length;
     if (loadLang != "en") {
-        console.log("Estou aqui");
         $.getJSON(`${pathOrigin}/lang/${loadLang}.json`, function(JSON) {
             const textInner = InnerTextLangCreateAdvanced(textSplit, textLength, JSON);
             if (textInner === undefined || textInner == "") {
