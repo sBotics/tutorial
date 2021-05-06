@@ -9,6 +9,7 @@ if (pathOrigin == "http://localhost" || deploy == false) {
 } else {
     pathOrigin = `${pathOrigin}/tutorial`;
 }
+console.log(pathOrigin);
 
 const ControllerTag = (tagName, fn) => {
     document.createElement(tagName);
