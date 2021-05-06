@@ -1,134 +1,159 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
-            </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="../arenas/index.html" class="text item category cursor-pointer">MENU:ARENAS</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content flex">
-            <div class="jumbotron">
-                <div class="main-panel">
-                    <div class="text-left">
-                        <h3 class="mb-0 font-weight-bold">Toybot</h3>
-                        <p>robots:toybot</p>
-                    </div>
-                    <hr class="my-4"/>
-                    <p>
-                        Toybot is one of the five preset robots present on the simulator. It consists of 3 color sensors (where two are down-facing). It is the fastest robot and quite possibly the most complicated to program.
-                    </p>
-                    <div class="p-3">
-                        <h5 class="font-weight-bold">Table of contents:</h5>
-                        <ol class="mb-0">
-                            <a href="#notes"><li>Notes</li></a>
-                            <a href="#trivia"><li>Trivia</li></a>
-                        </ol>
-                    </div>
-                    <h3 class="mt-3" id="notes">Notes</h3>
-                    <p>
-                        <i>Feel like expanding this article? Suggest your own texts and changes on github or <a href="https://discord.gg/PubzWWjzuz">our discord server</a></i> 
-                        <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, tellus vel dignissim interdum, ante quam pharetra sapien, sit amet pretium eros enim in libero.
-                        Suspendisse in aliquam neque, dapibus aliquet mauris. Vivamus ultricies lorem eu ex tristique, ut lacinia elit convallis. Integer in eleifend nibh, nec fringilla tortor.
-                        Duis fermentum suscipit mi, quis facilisis mauris varius eu. Aenean ultricies leo in eros eleifend sagittis. Aliquam erat volutpat. Nulla facilisi. Ut ac pellentesque libero.
-                        Ut sollicitudin consectetur ornare. In ex dolor, imperdiet ac est ut, pulvinar feugiat turpis. Sed cursus urna et tincidunt ultrices. -->
-                    </p>
-                    <h3 class="mt-3" id="trivia">Trivia</h3>
-                    <p>
-                        <ul>
-                            <li>The colors on the robot's texture are supposed to represent Brazil.</li>
-                        </ul>
-                    </p>
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="../guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="../arenas/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer ">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content flex">
+        <div class="jumbotron">
+            <div class="main-panel">
+                <div class="text-left">
+                    <h3 class="mb-0 font-weight-bold">Toybot</h3>
+                    <p>robots:toybot</p>
                 </div>
-                <div class="card text-center side-panel">
-                    <strong class="mt-3 mb-3">Toybot</strong>
-                    <img src="../../images/robots/background-4.png" class="w-100"/>
-                    <hr/>
-                    <strong class="mt-2 mb-2">Info.</strong>
-                    <ul class="text-left info-ul">
-                        <li><a href="behavior.html"><strong>Weight:</strong></a> 3</li>
-                        <li><strong>LED(s):</strong> 1</li>
-                        <li>
-                            <strong>Light/color sensor(s):</strong> 3
-                            <i class="d-block">Refresh rate: 47ms</i>
-                        </li>
-                        <li><strong>Buzzer(s):</strong> 3</li>
-                        <li><strong>Touch sensor(s):</strong> 1</li>
-                        <li><strong>Ultrasonic sensor(s):</strong> 2</li>
+                <hr class="my-4" />
+                <p>
+                    Toybot is one of the five preset robots present on the simulator. It consists of 3 color sensors (where two are down-facing). It is the fastest robot and quite possibly the most complicated to program.
+                </p>
+                <div class="p-3">
+                    <h5 class="font-weight-bold">Table of contents:</h5>
+                    <ol class="mb-0">
+                        <a href="#notes">
+                            <li>Notes</li>
+                        </a>
+                        <a href="#trivia">
+                            <li>Trivia</li>
+                        </a>
+                    </ol>
+                </div>
+                <h3 class="mt-3" id="notes">Notes</h3>
+                <p>
+                    <i>Feel like expanding this article? Suggest your own texts and changes on github or <a href="https://discord.gg/PubzWWjzuz">our discord server</a></i>
+                </p>
+                <h3 class="mt-3" id="trivia">Trivia</h3>
+                <p>
+                    <ul>
+                        <li>The colors on the robot's texture are supposed to represent Brazil.</li>
                     </ul>
-                    <hr/>
-                    <strong class="mt-2 mb-2">Actuators</strong>
-                    <div class="card p-2 text-left mt-1 mb-1">
-                        <div class="item-outer">
-                            <div class="item-image-outer">
-                                <img class="item-image" src="../../images/actuators/bulldozer.png"/>
-                            </div>
-                            <div>
-                                <span class="f-left">Bulldozer</span>
-                            </div>
+                </p>
+            </div>
+            <div class="card text-center side-panel">
+                <strong class="mt-3 mb-3">Toybot</strong>
+                <img src="../../images/robots/background-4.png" class="w-100" />
+                <hr/>
+                <strong class="mt-2 mb-2">Info.</strong>
+                <ul class="text-left info-ul">
+                    <li><a href="behavior.html"><strong>Weight:</strong></a> 3</li>
+                    <li><strong>LED(s):</strong> 1</li>
+                    <li>
+                        <strong>Light/color sensor(s):</strong> 3
+                        <i class="d-block">Refresh rate: 47ms</i>
+                    </li>
+                    <li><strong>Buzzer(s):</strong> 3</li>
+                    <li><strong>Touch sensor(s):</strong> 1</li>
+                    <li><strong>Ultrasonic sensor(s):</strong> 2</li>
+                </ul>
+                <hr/>
+                <strong class="mt-2 mb-2">Actuators</strong>
+                <div class="card p-2 text-left mt-1 mb-1">
+                    <div class="item-outer">
+                        <div class="item-image-outer">
+                            <img class="item-image" src="../../images/actuators/bulldozer.png" />
+                        </div>
+                        <div>
+                            <span class="f-left">Bulldozer</span>
                         </div>
                     </div>
-                    <div class="card p-2 text-left mt-1 mb-1">
-                        <div class="item-outer">
-                            <div class="item-image-outer">
-                                <img class="item-image" src="../../images/actuators/forklift.png"/>
-                            </div>
-                            <div>
-                                <span class="f-left">Forklift</span>
-                            </div>
+                </div>
+                <div class="card p-2 text-left mt-1 mb-1">
+                    <div class="item-outer">
+                        <div class="item-image-outer">
+                            <img class="item-image" src="../../images/actuators/forklift.png" />
+                        </div>
+                        <div>
+                            <span class="f-left">Forklift</span>
                         </div>
                     </div>
-                    <div class="card p-2 text-left mt-1 mb-1">
-                        <div class="item-outer">
-                            <div class="item-image-outer">
-                                <img class="item-image" src="../../images/actuators/forklift.png"/>
-                            </div>
-                            <div>
-                                <span class="f-left">Reduced range forklift</span>
-                            </div>
+                </div>
+                <div class="card p-2 text-left mt-1 mb-1">
+                    <div class="item-outer">
+                        <div class="item-image-outer">
+                            <img class="item-image" src="../../images/actuators/forklift.png" />
+                        </div>
+                        <div>
+                            <span class="f-left">Reduced range forklift</span>
                         </div>
                     </div>
-                    <div class="card p-2 text-left mt-1 mb-1">
-                        <div class="item-outer">
-                            <div class="item-image-outer">
-                                <img class="item-image" src="../../images/actuators/forklift.png"/>
-                            </div>
-                            <div>
-                                <span class="f-left">Frontal forklift</span>
-                            </div>
+                </div>
+                <div class="card p-2 text-left mt-1 mb-1">
+                    <div class="item-outer">
+                        <div class="item-image-outer">
+                            <img class="item-image" src="../../images/actuators/forklift.png" />
+                        </div>
+                        <div>
+                            <span class="f-left">Frontal forklift</span>
                         </div>
                     </div>
-                    <div class="card p-2 text-left mt-1 mb-1">
-                        <div class="item-outer">
-                            <div class="item-image-outer">
-                                <img class="item-image" src="../../images/actuators/rear-bulldozer.png"/>
-                            </div>
-                            <div>
-                                <span class="f-left">Rear bulldozer</span>
-                            </div>
+                </div>
+                <div class="card p-2 text-left mt-1 mb-1">
+                    <div class="item-outer">
+                        <div class="item-image-outer">
+                            <img class="item-image" src="../../images/actuators/rear-bulldozer.png" />
+                        </div>
+                        <div>
+                            <span class="f-left">Rear bulldozer</span>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>

@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="../guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer ">
+            <lang text="MENU:Programming" />
+        </a>
+
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="text-left">
+                <h3 class="mb-0 font-weight-bold">Code</h3>
+                <p>arenas:code</p>
             </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:ARENAS</a>
-            <a href="../robots/index.html" class="text item category cursor-pointer">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="text-left">
-                    <h3 class="mb-0 font-weight-bold">Code</h3>
-                    <p>arenas:code</p>
-                </div>
-                <hr class="my-4"/>
-                <p>
-                    The arena code is one of the core features of the platform. With it one can generate the same arena as another and thus be able to import or export fields with ease.
-                    These codes usually seem complex and hard to understand, and most of its features can be found on the <a href="editor.html">Arena Editor</a>. However, some users
-                    may find the code easy to manipulate and understand and may prefer to create their own arena-manipulating platforms.
-                </p>
-                <div class="ml-3">
-                    <h5 class="mt-3" id="curves">Example of an arena:</h5>
-                    <div class="card mb-3">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-primary btn-smbtn-primary " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <hr class="my-4" />
+            <p>
+                The arena code is one of the core features of the platform. With it one can generate the same arena as another and thus be able to import or export fields with ease. These codes usually seem complex and hard to understand, and most of its features can
+                be found on the <a href="editor.html">Arena Editor</a>. However, some users may find the code easy to manipulate and understand and may prefer to create their own arena-manipulating platforms.
+            </p>
+            <div class="ml-3">
+                <h5 class="mt-3" id="curves">Example of an arena:</h5>
+                <div class="card mb-3">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-primary btn-smbtn-primary " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Collapse/Expand
                             </button>
-                            </h2>
-                        </div>
-                
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
-                            <div class="card-body">
-                                <code class="card p-3">
+                        </h2>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                        <div class="card-body">
+                            <code class="card p-3">
                                     {<br/>
                                         &emsp;"settings": {<br/>
                                         &emsp;&emsp;"rescue_zone": {<br/>
@@ -791,352 +814,357 @@
                                         &emsp;]<br/>
                                         }
                                 </code>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <p class="mt-3">
-                    As can be seen above, codes consist of JSON files containing many properties, listed below.
-                </p>
-                <div class="p-3">
-                    <h5 class="font-weight-bold">Table of contents:</h5>
+            </div>
+            <p class="mt-3">
+                As can be seen above, codes consist of JSON files containing many properties, listed below.
+            </p>
+            <div class="p-3">
+                <h5 class="font-weight-bold">Table of contents:</h5>
+                <ol class="mb-0">
+                    <a href="#settings">
+                        <li>Settings</li>
+                    </a>
                     <ol class="mb-0">
-                        <a href="#settings"><li>Settings</li></a>
-                        <ol class="mb-0">
-                            <a href="#general-settings">
-                                <li>General settings</li>
-                            </a>
-                            <a href="#rescue-zone">
-                                <li>Rescue Zone settings</li>
-                            </a>
-                            <a href="#permissions">
-                                <li>Permissions</li>
-                            </a>
-                        </ol>
-                        <a href="#tiles"><li>Tiles</li></a>
-                        <ol class="mb-0">
-                            <a href="#general-fields">
-                                <li>General fields</li>
-                            </a>
-                            <a href="#properties">
-                                <li>Properties</li>
-                            </a>
-                        </ol>
-                        <a href="#objects"><li>Objects</li></a>
+                        <a href="#general-settings">
+                            <li>General settings</li>
+                        </a>
+                        <a href="#rescue-zone">
+                            <li>Rescue Zone settings</li>
+                        </a>
+                        <a href="#permissions">
+                            <li>Permissions</li>
+                        </a>
                     </ol>
-                </div>
-                <h3 class="mt-3" id="settings">Settings</h3>
-                <hr class="my-2">
-                <h4 class="mt-3" id="general-settings">General settings</h4>
-                <p>
+                    <a href="#tiles">
+                        <li>Tiles</li>
+                    </a>
+                    <ol class="mb-0">
+                        <a href="#general-fields">
+                            <li>General fields</li>
+                        </a>
+                        <a href="#properties">
+                            <li>Properties</li>
+                        </a>
+                    </ol>
+                    <a href="#objects">
+                        <li>Objects</li>
+                    </a>
+                </ol>
+            </div>
+            <h3 class="mt-3" id="settings">Settings</h3>
+            <hr class="my-2">
+            <h4 class="mt-3" id="general-settings">General settings</h4>
+            <p>
 
-                    <h5>(String) <strong>time_of_day</strong></h5>
-                    <p class="mb-0">
-                        A string from 6:00 to 18:00, where the second number can vary from 00 to 59
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"time_of_day": "14:00",</code></strong>
-
-                    <h5>(String) <strong>description</strong></h5>
-                    <p class="mb-0">
-                        Description that any user who imports the arena can see on the top-right corner of the "testing area" of the simulator.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"description": "Untitled Arena",</code></strong>
-
-                    <h5>(Boolean) <strong>robot_has_to_follow_line</strong></h5>
-                    <p class="mb-0">
-                        The most important boolean in the arena settings. This generates the line the robot has to follow and with this the user can activate Rescue Kits, Markers,
-                        Standard RoboCupJr scoring, and many other settings.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_has_to_follow_line": true,</code></strong>
-
-                    <h5>(Boolean) <strong>time_limit_stops_code_execution</strong></h5>
-                    <p class="mb-0">
-                        Stops the execution of the user's code after the time limit (see <code>time_limit</code> below) is exceeded.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"time_limit_stops_code_execution": true,</code></strong>
-
-                    <h5>(Boolean) <strong>finish_execution_after_code</strong></h5>
-                    <p class="mb-0">
-                        Stops the simulation after the last line of code (instead of standing still like in the normal behavior).
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"finish_execution_after_code": false,</code></strong>
-
-                    <h5>(Boolean) <strong>change_position_in_routine</strong></h5>
-                    <p class="mb-0">
-                        Allows the user to change the robot's position manually while the simulation is running.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"change_position_in_routine": false,</code></strong>
-
-                    <h5>(Integer) <strong>obstacle_dodging_time</strong></h5>
-                    <p class="mb-0">
-                        Integer from 10 to 120 (seconds) of how long the robot has to dodge an obstacle before a lack of progress is called.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"obstacle_dodging_time": 50,</code></strong>
-
-                    <h5>(Boolean) <strong>obstacle_pushing</strong></h5>
-                    <p class="mb-0">
-                        Sets whether or not a lack of progress will be called when the robot pushes an obstacle.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"obstacle_pushing": true,</code></strong>
-
-                    <h5>(Boolean) <strong>distance_based_checkpoint_scoring</strong></h5>
-                    <p class="mb-0">
-                        Sets whether or not the marker scoring algorithm is going to consider how far a marker is from another.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"distance_based_checkpoint_scoring": true,</code></strong>
-
-                    <h5>(Boolean) <strong>standard_robocup_jr_scoring</strong></h5>
-                    <p class="mb-0">
-                        Sets whether or not the arena will use multipliers and other international scoring features instead of their Brazilian counterparts.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"standard_robocup_jr_scoring": true,</code></strong>
-
-                    <h5>(Boolean) <strong>rescue_kit_enabled</strong></h5>
-                    <p class="mb-0">
-                        Enables the rescue kit. Depends on <code>level_two_rescue_kit</code> to set the level.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"rescue_kit_enabled": true,</code></strong>
-
-                    <h5>(Boolean) <strong>lack_of_progress</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables completely the lack of progress feature.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"lack_of_progress": true,</code></strong>
-
-                    <h5>(Integer) <strong>number_of_checkpoints</strong></h5>
-                    <p class="mb-0">
-                        Sets how many <i>user-input checkpoints</i> are going to be present in the arena (Pre-2021 rules/Brazilian ruleset).
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"number_of_checkpoints": 0,</code></strong>
-
-                    <h5>(Integer/Enum) <strong>time_limit</strong></h5>
-                    <p class="mb-0">
-                        This may change in the future, however currently the simulator uses the enumerator below for the time limits:
-                        <table class="table mt-3 w-enum-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">TimeLimits</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>OneMinute</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>TwoMinutes</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>ThreeMinutes</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>FiveMinutes</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>EightMinutes</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>TenMinutes</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>NoTimeLimit</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"time_limit": 4,</code></strong>
-
-                    <h5>(Boolean) <strong>level_two_evacuation_point</strong></h5>
-                    <p class="mb-0">
-                        Sets the Evacuation Point's level (true equals "level 2").
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"level_two_evacuation_point": false,</code></strong>
-
-                    <h5>(Boolean) <strong>level_two_rescue_kit</strong></h5>
-                    <p class="mb-0">
-                        Sets the Rescue Kit's level (true equals "level 2").
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"level_two_rescue_kit": false,</code></strong>
-
+                <h5>(String) <strong>time_of_day</strong></h5>
+                <p class="mb-0">
+                    A string from 6:00 to 18:00, where the second number can vary from 00 to 59
                 </p>
-                <h4 class="mt-3" id="rescue-zone">Rescue Zone settings</h4>
-                <p>
-                    <h5>(Integer) <strong>live_victims</strong></h5>
-                    <p class="mb-0">
-                        Sets the number of live victims inside the Rescue Zone (0 to 10).
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"live_victims": 2,</code></strong>
+                <strong class="d-block mb-3">Example: <code>"time_of_day": "14:00",</code></strong>
 
-                    <h5>(Integer) <strong>dead_victims</strong></h5>
-                    <p class="mb-0">
-                        Sets the number of dead victims inside the Rescue Zone (0 to 10).
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"dead_victims": 1,</code></strong>
-
-                    <h5>(Integer/Enum) <strong>ramp</strong></h5>
-                    <p class="mb-0">
-                        Ramp is an integer that references an Enum. This defines the uniquely Brazilian Rescue Zone ramp.
-                        <table class="table mt-3 w-enum-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Ramps</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>NoRamp</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Line</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Gap</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>SpeedBump</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>MultipleSpeedBumps</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>MultipleGaps</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>GapAndSpeedBump</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"ramp": 0,</code></strong>
-
-                    <h5>(Integer/Enum) <strong>exit</strong></h5>
-                    <p class="mb-0">
-                        Exit is an integer that references an Enum. This defines in which position the Rescue Zone exit will be generated.
-                        <table class="table mt-3 w-enum-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Exits</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>NoExit</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>LeftFacing</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>RightFacingFrontal</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>RightFacing</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"exit": 1,</code></strong>
-
-                    <h5>(Integer/Enum) <strong>point_position</strong></h5>
-                    <p class="mb-0">
-                        Point_position is an integer that references an Enum. This defines in which position the Evacuation Point exit will be placed.
-                        <table class="table mt-3 w-enum-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">EPPos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>NoEvacuationPoint</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Random</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>LeftFacing</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>RightFacingFrontal</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>RightFacing</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"point_position": 1,</code></strong>
+                <h5>(String) <strong>description</strong></h5>
+                <p class="mb-0">
+                    Description that any user who imports the arena can see on the top-right corner of the "testing area" of the simulator.
                 </p>
-                <h4 class="mt-3" id="permissions">Permissions</h4>
-                <p>
-                    <h5>(Boolean) <strong>robot_one</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/r1.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_one": true,</code></strong>
+                <strong class="d-block mb-3">Example: <code>"description": "Untitled Arena",</code></strong>
 
-                    <h5>(Boolean) <strong>robot_two</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/r2.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_two": true,</code></strong>
-
-                    <h5>(Boolean) <strong>robot_three</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/r3.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_three": true,</code></strong>
-
-                    <h5>(Boolean) <strong>robot_four</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/r4.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_four": true,</code></strong>
-
-                    <h5>(Boolean) <strong>robot_five</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/r5.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"robot_five": true,</code></strong>
-
-                    <h5>(Boolean) <strong>custom_robots</strong></h5>
-                    <p class="mb-0">
-                        Enables or disables the permission to use <a href="../robots/customization.html">said robot</a>.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"custom_robots": true,</code></strong>
+                <h5>(Boolean) <strong>robot_has_to_follow_line</strong></h5>
+                <p class="mb-0">
+                    The most important boolean in the arena settings. This generates the line the robot has to follow and with this the user can activate Rescue Kits, Markers, Standard RoboCupJr scoring, and many other settings.
                 </p>
-                <h3 class="mt-3" id="tiles">Tiles</h3>
-                <hr class="my-2">
-                <p>
-                    Each tile property and field is further discussed <a href="tiles.html">here</a>.
-                    <div class="ml-3 mb-3">
-                        <h5 id="curves">Example of a tile:</h5>
-                        <code class="d-block mb-3 card p-3">
+                <strong class="d-block mb-3">Example: <code>"robot_has_to_follow_line": true,</code></strong>
+
+                <h5>(Boolean) <strong>time_limit_stops_code_execution</strong></h5>
+                <p class="mb-0">
+                    Stops the execution of the user's code after the time limit (see <code>time_limit</code> below) is exceeded.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"time_limit_stops_code_execution": true,</code></strong>
+
+                <h5>(Boolean) <strong>finish_execution_after_code</strong></h5>
+                <p class="mb-0">
+                    Stops the simulation after the last line of code (instead of standing still like in the normal behavior).
+                </p>
+                <strong class="d-block mb-3">Example: <code>"finish_execution_after_code": false,</code></strong>
+
+                <h5>(Boolean) <strong>change_position_in_routine</strong></h5>
+                <p class="mb-0">
+                    Allows the user to change the robot's position manually while the simulation is running.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"change_position_in_routine": false,</code></strong>
+
+                <h5>(Integer) <strong>obstacle_dodging_time</strong></h5>
+                <p class="mb-0">
+                    Integer from 10 to 120 (seconds) of how long the robot has to dodge an obstacle before a lack of progress is called.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"obstacle_dodging_time": 50,</code></strong>
+
+                <h5>(Boolean) <strong>obstacle_pushing</strong></h5>
+                <p class="mb-0">
+                    Sets whether or not a lack of progress will be called when the robot pushes an obstacle.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"obstacle_pushing": true,</code></strong>
+
+                <h5>(Boolean) <strong>distance_based_checkpoint_scoring</strong></h5>
+                <p class="mb-0">
+                    Sets whether or not the marker scoring algorithm is going to consider how far a marker is from another.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"distance_based_checkpoint_scoring": true,</code></strong>
+
+                <h5>(Boolean) <strong>standard_robocup_jr_scoring</strong></h5>
+                <p class="mb-0">
+                    Sets whether or not the arena will use multipliers and other international scoring features instead of their Brazilian counterparts.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"standard_robocup_jr_scoring": true,</code></strong>
+
+                <h5>(Boolean) <strong>rescue_kit_enabled</strong></h5>
+                <p class="mb-0">
+                    Enables the rescue kit. Depends on <code>level_two_rescue_kit</code> to set the level.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"rescue_kit_enabled": true,</code></strong>
+
+                <h5>(Boolean) <strong>lack_of_progress</strong></h5>
+                <p class="mb-0">
+                    Enables or disables completely the lack of progress feature.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"lack_of_progress": true,</code></strong>
+
+                <h5>(Integer) <strong>number_of_checkpoints</strong></h5>
+                <p class="mb-0">
+                    Sets how many <i>user-input checkpoints</i> are going to be present in the arena (Pre-2021 rules/Brazilian ruleset).
+                </p>
+                <strong class="d-block mb-3">Example: <code>"number_of_checkpoints": 0,</code></strong>
+
+                <h5>(Integer/Enum) <strong>time_limit</strong></h5>
+                <p class="mb-0">
+                    This may change in the future, however currently the simulator uses the enumerator below for the time limits:
+                    <table class="table mt-3 w-enum-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">TimeLimits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0</th>
+                                <td>OneMinute</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>TwoMinutes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>ThreeMinutes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>FiveMinutes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>EightMinutes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>TenMinutes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>NoTimeLimit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"time_limit": 4,</code></strong>
+
+                <h5>(Boolean) <strong>level_two_evacuation_point</strong></h5>
+                <p class="mb-0">
+                    Sets the Evacuation Point's level (true equals "level 2").
+                </p>
+                <strong class="d-block mb-3">Example: <code>"level_two_evacuation_point": false,</code></strong>
+
+                <h5>(Boolean) <strong>level_two_rescue_kit</strong></h5>
+                <p class="mb-0">
+                    Sets the Rescue Kit's level (true equals "level 2").
+                </p>
+                <strong class="d-block mb-3">Example: <code>"level_two_rescue_kit": false,</code></strong>
+
+            </p>
+            <h4 class="mt-3" id="rescue-zone">Rescue Zone settings</h4>
+            <p>
+                <h5>(Integer) <strong>live_victims</strong></h5>
+                <p class="mb-0">
+                    Sets the number of live victims inside the Rescue Zone (0 to 10).
+                </p>
+                <strong class="d-block mb-3">Example: <code>"live_victims": 2,</code></strong>
+
+                <h5>(Integer) <strong>dead_victims</strong></h5>
+                <p class="mb-0">
+                    Sets the number of dead victims inside the Rescue Zone (0 to 10).
+                </p>
+                <strong class="d-block mb-3">Example: <code>"dead_victims": 1,</code></strong>
+
+                <h5>(Integer/Enum) <strong>ramp</strong></h5>
+                <p class="mb-0">
+                    Ramp is an integer that references an Enum. This defines the uniquely Brazilian Rescue Zone ramp.
+                    <table class="table mt-3 w-enum-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Ramps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0</th>
+                                <td>NoRamp</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Line</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Gap</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>SpeedBump</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>MultipleSpeedBumps</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>MultipleGaps</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>GapAndSpeedBump</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"ramp": 0,</code></strong>
+
+                <h5>(Integer/Enum) <strong>exit</strong></h5>
+                <p class="mb-0">
+                    Exit is an integer that references an Enum. This defines in which position the Rescue Zone exit will be generated.
+                    <table class="table mt-3 w-enum-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Exits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0</th>
+                                <td>NoExit</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>LeftFacing</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>RightFacingFrontal</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>RightFacing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"exit": 1,</code></strong>
+
+                <h5>(Integer/Enum) <strong>point_position</strong></h5>
+                <p class="mb-0">
+                    Point_position is an integer that references an Enum. This defines in which position the Evacuation Point exit will be placed.
+                    <table class="table mt-3 w-enum-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">EPPos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0</th>
+                                <td>NoEvacuationPoint</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Random</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>LeftFacing</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>RightFacingFrontal</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>RightFacing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"point_position": 1,</code></strong>
+            </p>
+            <h4 class="mt-3" id="permissions">Permissions</h4>
+            <p>
+                <h5>(Boolean) <strong>robot_one</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/r1.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"robot_one": true,</code></strong>
+
+                <h5>(Boolean) <strong>robot_two</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/r2.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"robot_two": true,</code></strong>
+
+                <h5>(Boolean) <strong>robot_three</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/r3.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"robot_three": true,</code></strong>
+
+                <h5>(Boolean) <strong>robot_four</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/r4.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"robot_four": true,</code></strong>
+
+                <h5>(Boolean) <strong>robot_five</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/r5.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"robot_five": true,</code></strong>
+
+                <h5>(Boolean) <strong>custom_robots</strong></h5>
+                <p class="mb-0">
+                    Enables or disables the permission to use <a href="../robots/customization.html">said robot</a>.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"custom_robots": true,</code></strong>
+            </p>
+            <h3 class="mt-3" id="tiles">Tiles</h3>
+            <hr class="my-2">
+            <p>
+                Each tile property and field is further discussed <a href="tiles.html">here</a>.
+                <div class="ml-3 mb-3">
+                    <h5 id="curves">Example of a tile:</h5>
+                    <code class="d-block mb-3 card p-3">
                             {<br/>
                             &emsp;"id": 6,<br/>
                             &emsp;"x": 6,<br/>
@@ -1149,93 +1177,95 @@
                             &emsp;}<br/>
                             }<br/>
                         </code>
-                    </div>
+                </div>
+            </p>
+            <h4 class="mt-3" id="general-fields">General fields</h4>
+            <p>
+                <h5>(Integer) <strong>id</strong></h5>
+                <p class="mb-0">
+                    Sets the id of the tile.
                 </p>
-                <h4 class="mt-3" id="general-fields">General fields</h4>
-                <p>
-                    <h5>(Integer) <strong>id</strong></h5>
-                    <p class="mb-0">
-                        Sets the id of the tile.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"id": 0,</code></strong>
+                <strong class="d-block mb-3">Example: <code>"id": 0,</code></strong>
 
-                    <h5>(Integer) <strong>x</strong></h5>
-                    <p class="mb-0">
-                        Sets the x position of the tile.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"x": 1,</code></strong>
-
-                    <h5>(Integer) <strong>z</strong></h5>
-                    <p class="mb-0">
-                        Sets the z position of the tile.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"z": 1,</code></strong>
-
-                    <h5>(Integer) <strong>y</strong></h5>
-                    <p class="mb-0">
-                        Sets the height of the tile.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"y": 0,</code></strong>
-
-                    <h5>(String) <strong>type</strong></h5>
-                    <p class="mb-0">
-                        Sets the type of the tile. Types can either be:
-                        <ul>
-                            <li><code>straight_line</code></li>
-                            <li><code>curve</code></li>
-                        </ul>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"type": "straight_line",</code></strong>
-
-                    <h5>(Integer) <strong>rotation</strong></h5>
-                    <p class="mb-0">
-                        Sets the rotation of the tile.
-                        <table class="table mt-3 w-enum-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Rotation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>0&deg;</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>90&deg;</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>180&deg;</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>270&deg;</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"rotation": 0,</code></strong>
+                <h5>(Integer) <strong>x</strong></h5>
+                <p class="mb-0">
+                    Sets the x position of the tile.
                 </p>
-                <h4 class="mt-3" id="properties">Properties</h4>
-                <p>
-                    <h5>(Boolean) <strong>has_checkpoint</strong></h5>
-                    <p class="mb-0">
-                        Activates marker (checkpoint) on said tile. However, that is appliable only for non-tileset non-scoring tiles. The property will be ignored if activated on an invalid tile.
-                    </p>
-                    <strong class="d-block mb-3">Example: <code>"has_checkpoint": false,</code></strong>
+                <strong class="d-block mb-3">Example: <code>"x": 1,</code></strong>
+
+                <h5>(Integer) <strong>z</strong></h5>
+                <p class="mb-0">
+                    Sets the z position of the tile.
                 </p>
-                <h3 class="mt-3" id="objects">Objects</h3>
-                <hr class="my-2">
-                <p>
-                    Work in progress. This is going to be reimplemented in the simulator as it once was a feature "pre-JSONification".
+                <strong class="d-block mb-3">Example: <code>"z": 1,</code></strong>
+
+                <h5>(Integer) <strong>y</strong></h5>
+                <p class="mb-0">
+                    Sets the height of the tile.
                 </p>
-            </div>
+                <strong class="d-block mb-3">Example: <code>"y": 0,</code></strong>
+
+                <h5>(String) <strong>type</strong></h5>
+                <p class="mb-0">
+                    Sets the type of the tile. Types can either be:
+                    <ul>
+                        <li><code>straight_line</code></li>
+                        <li><code>curve</code></li>
+                    </ul>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"type": "straight_line",</code></strong>
+
+                <h5>(Integer) <strong>rotation</strong></h5>
+                <p class="mb-0">
+                    Sets the rotation of the tile.
+                    <table class="table mt-3 w-enum-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Rotation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0</th>
+                                <td>0&deg;</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>90&deg;</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>180&deg;</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>270&deg;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <strong class="d-block mb-3">Example: <code>"rotation": 0,</code></strong>
+            </p>
+            <h4 class="mt-3" id="properties">Properties</h4>
+            <p>
+                <h5>(Boolean) <strong>has_checkpoint</strong></h5>
+                <p class="mb-0">
+                    Activates marker (checkpoint) on said tile. However, that is appliable only for non-tileset non-scoring tiles. The property will be ignored if activated on an invalid tile.
+                </p>
+                <strong class="d-block mb-3">Example: <code>"has_checkpoint": false,</code></strong>
+            </p>
+            <h3 class="mt-3" id="objects">Objects</h3>
+            <hr class="my-2">
+            <p>
+                Work in progress. This is going to be reimplemented in the simulator as it once was a feature "pre-JSONification".
+            </p>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>

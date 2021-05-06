@@ -1,156 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>sBotics Tutorial</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../styles/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="keywords" content="simulação, sBotics, tutorial, tutorial sBotics">
+    <meta name="author" content="wEduc">
+    <meta name="description" content="">
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+        <div class="item logo-spot pt-2 pb-2">
+            <a href="../../index.html">
+                <img src="../../images/icon.png" />
+            </a>
         </div>
-        <div class="side-navigation hidden">
-            <div class="item logo-spot pt-2 pb-2">
-                <a href="../../index.html">
-                    <img src="../../images/icon.png"/>
-                </a>    
+        <a href="../index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Home page" />
+        </a>
+        <a href="../guide/getting_started.html" class="text item category cursor-pointer">
+            <lang text="MENU:Getting started" />
+        </a>
+        <a href="index.html" class="text item category cursor-pointer selected">
+            <lang text="MENU:Arenas" />
+        </a>
+        <a href="../robots/index.html" class="text item category cursor-pointer">
+            <lang text="MENU:Robots" />
+        </a>
+        <a href="../programming/index.html" class="text item category cursor-pointer ">
+            <lang text="MENU:Programming" />
+        </a>
+    </div>
+    <div class="content">
+        <div class="jumbotron">
+            <div class="text-left">
+                <h3 class="mb-0 font-weight-bold">Tiles</h3>
+                <p>arenas:tiles</p>
             </div>
-            <a href="../index.html" class="text item category cursor-pointer">MENU:HOME_PAGE</a>
-            <a href="../guide/getting_started.html" class="text item category cursor-pointer">MENU:GETTING_STARTED</a>
-            <a href="index.html" class="text item category cursor-pointer selected">MENU:ARENAS</a>
-            <a href="../robots/index.html" class="text item category cursor-pointer">MENU:ROBOTS</a>
-            <a href="../programming/index.html" class="text item category cursor-pointer">MENU:PROGRAMMING</a>
-        </div>
-        <div class="content">
-            <div class="jumbotron">
-                <div class="text-left">
-                    <h3 class="mb-0 font-weight-bold">Tiles</h3>
-                    <p>arenas:tiles</p>
-                </div>
-                <hr class="my-4"/>
-                <p>
-                    Tiles are the building blocks of any sBotics arena. Without tiles (with walls or lines), the robot has no way of finding a path towards a given goal.
-                    For that reason tiles are an integral part of the simulator and one with many different functionalities, which can be confusing for newcomers.
-                    Below, we'll discuss the different types of tiles and some of the properties that govern their simulated existence.   
-                </p>
-                <div class="p-3">
-                    <h5 class="font-weight-bold">Table of contents:</h5>
+            <hr class="my-4" />
+            <p>
+                Tiles are the building blocks of any sBotics arena. Without tiles (with walls or lines), the robot has no way of finding a path towards a given goal. For that reason tiles are an integral part of the simulator and one with many different functionalities,
+                which can be confusing for newcomers. Below, we'll discuss the different types of tiles and some of the properties that govern their simulated existence.
+            </p>
+            <div class="p-3">
+                <h5 class="font-weight-bold">Table of contents:</h5>
+                <ol class="mb-0">
+                    <a href="#type">
+                        <li>Type</li>
+                    </a>
                     <ol class="mb-0">
-                        <a href="#type"><li>Type</li></a>
-                        <ol class="mb-0">
-                            <a href="#std-tile">
-                                <li>Standard tile</li>
-                            </a>
-                            <a href="#tileset">
-                                <li>Tileset</li>
-                            </a>
-                            <a href="#intersections">
-                                <li>Intersections</li>
-                            </a>
-                            <a href="#maze">
-                                <li>Maze tiles</li>
-                            </a>
-                            <a href="#special">
-                                <li>Special tiles</li>
-                            </a>
-                            <ol class="mb-0">
-                                <a href="#rescue">
-                                    <li>Rescue zone</li>
-                                </a>
-                            </ol>
-                        </ol>
-                        <a href="#properties">
-                            <li>Properties</li>
+                        <a href="#std-tile">
+                            <li>Standard tile</li>
+                        </a>
+                        <a href="#tileset">
+                            <li>Tileset</li>
+                        </a>
+                        <a href="#intersections">
+                            <li>Intersections</li>
+                        </a>
+                        <a href="#maze">
+                            <li>Maze tiles</li>
+                        </a>
+                        <a href="#special">
+                            <li>Special tiles</li>
                         </a>
                         <ol class="mb-0">
-                            <a href="#id">
-                                <li>ID</li>
-                            </a>
-                            <ol class="mb-0">
-                                <a href="#straight">
-                                    <li>Straight lines</li>
-                                </a>
-                                <a href="#curves">
-                                    <li>Curves</li>
-                                </a>
-                            </ol>
-                            <a href="#rotation">
-                                <li>Rotation</li>
-                            </a>
-                            <a href="#height">
-                                <li>Height</li>
+                            <a href="#rescue">
+                                <li>Rescue zone</li>
                             </a>
                         </ol>
-                        <a href="#custom">
-                            <li>Custom</li>
+                    </ol>
+                    <a href="#properties">
+                        <li>Properties</li>
+                    </a>
+                    <ol class="mb-0">
+                        <a href="#id">
+                            <li>ID</li>
+                        </a>
+                        <ol class="mb-0">
+                            <a href="#straight">
+                                <li>Straight lines</li>
+                            </a>
+                            <a href="#curves">
+                                <li>Curves</li>
+                            </a>
+                        </ol>
+                        <a href="#rotation">
+                            <li>Rotation</li>
+                        </a>
+                        <a href="#height">
+                            <li>Height</li>
                         </a>
                     </ol>
-                </div>
-                <h3 class="mt-3" id="type">Type</h3>
-                <hr class="my-2">
+                    <a href="#custom">
+                        <li>Custom</li>
+                    </a>
+                </ol>
+            </div>
+            <h3 class="mt-3" id="type">Type</h3>
+            <hr class="my-2">
+            <p>
+                Tiles come in many different types. These types serve slightly different functions in the arena.
+            </p>
+            <h4 class="mt-3" id="std-tile">Standard tile</h4>
+            <p>
+                Standard tiles consist of simple straight lines and curves, usually without any scoring features. However, they are the only tiles in the simulator the user can place markers/checkpoints and Level 2 Rescue Kits can spawn.
+            </p>
+            <img src="../../images/arenas/simple.png" style="height: 150px;">
+            <h4 class="mt-3" id="tileset">Tileset</h4>
+            <p>
+                Tilesets are collection of multiple tiles, indicated in the <a href="editor.html">editor</a> by a yellow overlay (seen below).
+            </p>
+            <img src="../../images/arenas/tileset.png" style="height: 150px;">
+            <p class="mb-0 mt-3">
+                Tilesets have a slight chance to change each time the user or the simulator resets/reloads the arena, as can be seen below:
+            </p>
+            <img src="../../images/arenas/tileset.gif" style="height: 100px;">
+            <h4 class="mt-3" id="intersections">Intersections</h4>
+            <p>
                 <p>
-                    Tiles come in many different types. These types serve slightly different functions in the arena.
+                    Intersections are tiles consisting of multiple entrances, and its exit is entirely defined by which side of the tile the robot has entered. Below, some examples of intersections. These tiles usually contain a green square slightly under the line, indicating
+                    the correct way to go. If both sides of the line have a green square, it's indication that the robot has to turn backwards. Below, some examples of how the entrance of an intersection determines its exit.
                 </p>
-                <h4 class="mt-3" id="std-tile">Standard tile</h4>
+                <img src="../../images/arenas/intersection1.gif" style="height: 150px;">
+                <img src="../../images/arenas/intersection2.gif" style="height: 150px;">
+                <img src="../../images/arenas/intersection3.gif" style="height: 150px;">
+            </p>
+            <h4 class="mt-3" id="maze">Maze tiles</h4>
+            <p>
+                sBotics is also capable of creating Maze arenas, although maze rules are not yet supported.
+            </p>
+            <img src="../../images/arenas/maze.png" style="height: 300px;">
+            <h4 class="mt-3" id="special">Special tiles</h4>
+            <p>
+                Special tiles are represented by a red overlay in the <a href="editor.html">editor</a>, as can be seen below. These can be starting or goal tiles, as well as the rescue zone (explained further below).
+            </p>
+            <img src="../../images/arenas/special.png" style="height: 100px;">
+            <p class="mt-3">
+                The simulator does not support multiple special tiles of the same type, and an error tile will appear in the place of a special tile if another one of its type was already generated in the scenario.
+            </p>
+            <img src="../../images/arenas/error.png" style="height: 100px;">
+            <div class="ml-5">
+                <h5 class="mt-3" id="rescue">Rescue zone</h5>
                 <p>
-                    Standard tiles consist of simple straight lines and curves, usually without any scoring features. However, they are the only tiles in the simulator the user can place markers/checkpoints and Level 2 Rescue Kits can spawn.
+                    The rescue zone is perhaps the only truly "unique" tile of the simulator. It's the only 3x3 tile and it also has an entire section of the <a href="editor.html">arena editor</a> dedicated to it. The rescue zone's placing "pivot" is
+                    its center, and depending on how one configures the arena, it can also have a ramp and an exit. This tile is also capable of handling up to ten victims inside its walls, five live and five dead.
                 </p>
-                <img src="../../images/arenas/simple.png" style="height: 150px;">
-                <h4 class="mt-3" id="tileset">Tileset</h4>
-                <p>
-                    Tilesets are collection of multiple tiles, indicated in the <a href="editor.html">editor</a> by a yellow overlay (seen below).
-                </p>
-                <img src="../../images/arenas/tileset.png" style="height: 150px;">
-                <p class="mb-0 mt-3">
-                    Tilesets have a slight chance to change each time the user or the simulator resets/reloads the arena, as can be seen below:
-                </p>
-                <img src="../../images/arenas/tileset.gif" style="height: 100px;">
-                <h4 class="mt-3" id="intersections">Intersections</h4>
-                <p>
-                    <p>
-                        Intersections are tiles consisting of multiple entrances, and its exit is entirely defined by which side of the tile the robot has entered. Below, some examples of intersections.
-                        These tiles usually contain a green square slightly under the line, indicating the correct way to go. If both sides of the line have a green square, it's indication that the robot has to turn backwards. 
-                        Below, some examples of how the entrance of an intersection determines its exit.
-                    </p>
-                    <img src="../../images/arenas/intersection1.gif" style="height: 150px;">
-                    <img src="../../images/arenas/intersection2.gif" style="height: 150px;">
-                    <img src="../../images/arenas/intersection3.gif" style="height: 150px;">
-                </p>
-                <h4 class="mt-3" id="maze">Maze tiles</h4>
-                <p>
-                    sBotics is also capable of creating Maze arenas, although maze rules are not yet supported.
-                </p>
-                <img src="../../images/arenas/maze.png" style="height: 300px;">
-                <h4 class="mt-3" id="special">Special tiles</h4>
-                <p>
-                    Special tiles are represented by a red overlay in the <a href="editor.html">editor</a>, as can be seen below. These can be starting or goal tiles, as well as the rescue zone (explained further below).
-                </p>
-                <img src="../../images/arenas/special.png" style="height: 100px;">
-                <p class="mt-3">
-                    The simulator does not support multiple special tiles of the same type, and an error tile will appear in the place of a special tile if another one of its type was already generated in the scenario.
-                </p>
-                <img src="../../images/arenas/error.png" style="height: 100px;">
-                <div class="ml-5">
-                    <h5 class="mt-3" id="rescue">Rescue zone</h5>
-                    <p>
-                        The rescue zone is perhaps the only truly "unique" tile of the simulator. It's the only 3x3 tile and it also has an entire section of the <a href="editor.html">arena editor</a> dedicated to it.
-                        The rescue zone's placing "pivot" is its center, and depending on how one configures the arena, it can also have a ramp and an exit. This tile is also capable of handling up to ten victims inside its walls,
-                        five live and five dead.
-                    </p>
-                    <img src="../../images/arenas/zone1.png" style="height: 200px;">
-                    <img src="../../images/arenas/zone2.png" style="height: 200px;">
-                </div>
-                <h3 class="mt-3" id="properties">Properties</h3>
-                <hr class="my-2">
-                Tiles are composed of many different properties, which help the simulator process and better understand its position and interaction with other tiles and the robot.
-                <h4 class="mt-3" id="id">ID</h4>
-                <p>
-                    The ID of a tile is represented by a number visible in the <a href="editor.html">Editor</a>. Tile IDs are separated in two categories: Curved and Straight lines.
-                    Therefore, tile IDs are not unique per tile, but unique per tile inside their given category.
-                    
-                    <!--
+                <img src="../../images/arenas/zone1.png" style="height: 200px;">
+                <img src="../../images/arenas/zone2.png" style="height: 200px;">
+            </div>
+            <h3 class="mt-3" id="properties">Properties</h3>
+            <hr class="my-2"> Tiles are composed of many different properties, which help the simulator process and better understand its position and interaction with other tiles and the robot.
+            <h4 class="mt-3" id="id">ID</h4>
+            <p>
+                The ID of a tile is represented by a number visible in the <a href="editor.html">Editor</a>. Tile IDs are separated in two categories: Curved and Straight lines. Therefore, tile IDs are not unique per tile, but unique per tile inside their
+                given category.
+
+                <!--
                     <div class="ml-5">
                         <h5 class="mt-3" id="straight">Straight lines IDs (Work in progress)</h5>
                         <div class="card mb-3">
@@ -919,32 +940,33 @@
                         </div>
                     </div>
                     -->
-                </p>
-                <h4 class="mt-3" id="rotation">Rotation</h4>
-                <p>
-                    Tiles come in one of four different rotations, which can be changed manually in the <a href="editor.html">Editor</a> to all sorts of tiles (including special tiles such as the <i>Rescue Zone</i>) by pressing R:
-                </p>
-                    <ol start="0">
-                        <li><strong>0 degrees</strong></li>
-                        <li><strong>90 degrees</strong></li>
-                        <li><strong>180 degrees</strong></li>
-                        <li><strong>270 degrees</strong></li>
-                    </ol>
-                <p>
-                    The four states can be seen respectively in the image below:
-                </p>
-                <img src="../../images/arenas/rotations.png" style="height: 150px;">
-                <h4 class="mt-3" id="height">Height</h4>
-                <p>
-                    Tiles can come in different height values, which can be manually adjusted in the <a href="editor.html">Editor</a> (from 0 to 9) by pressing + and -, or by manually editing the <a href="code.html" >code</a>.
-                </p>
-                <img src="../../images/arenas/height.png" style="height: 200px;">
-                <h3 class="mt-3" id="custom">Custom</h3>
-                <hr class="my-2">
-                <p class="mb-1">
-                    While the simulator was being used as the main platform for the Brazilian RoboCupJr trials in 2020, many suggestions were made regarding tile customization, and many people went out of their way to create customized tiles with the few tools offered by sBotics at the time. Currently the simulator does not support customized tiles and many plans are already being discussed for its implementation. Hopefully when ready, will look something like this:
-                </p>
-                <code class="card p-3">
+            </p>
+            <h4 class="mt-3" id="rotation">Rotation</h4>
+            <p>
+                Tiles come in one of four different rotations, which can be changed manually in the <a href="editor.html">Editor</a> to all sorts of tiles (including special tiles such as the <i>Rescue Zone</i>) by pressing R:
+            </p>
+            <ol start="0">
+                <li><strong>0 degrees</strong></li>
+                <li><strong>90 degrees</strong></li>
+                <li><strong>180 degrees</strong></li>
+                <li><strong>270 degrees</strong></li>
+            </ol>
+            <p>
+                The four states can be seen respectively in the image below:
+            </p>
+            <img src="../../images/arenas/rotations.png" style="height: 150px;">
+            <h4 class="mt-3" id="height">Height</h4>
+            <p>
+                Tiles can come in different height values, which can be manually adjusted in the <a href="editor.html">Editor</a> (from 0 to 9) by pressing + and -, or by manually editing the <a href="code.html">code</a>.
+            </p>
+            <img src="../../images/arenas/height.png" style="height: 200px;">
+            <h3 class="mt-3" id="custom">Custom</h3>
+            <hr class="my-2">
+            <p class="mb-1">
+                While the simulator was being used as the main platform for the Brazilian RoboCupJr trials in 2020, many suggestions were made regarding tile customization, and many people went out of their way to create customized tiles with the few tools offered by
+                sBotics at the time. Currently the simulator does not support customized tiles and many plans are already being discussed for its implementation. Hopefully when ready, will look something like this:
+            </p>
+            <code class="card p-3">
                     "your_custom_tile": {
                         "name": {
                             "EN": "Name for your custom tile",
@@ -955,12 +977,13 @@
                             ...
                         }
                     }
-                </code>
-                This is currently being drafted and will be implemented in the not-so-distant future.
-            </div>
+                </code> This is currently being drafted and will be implemented in the not-so-distant future.
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../../scripts/require.js"></script>
-        <script src="../../scripts/main.js"></script>
-    </body>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/require.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/language.js"></script>
+</body>
+
 </html>
