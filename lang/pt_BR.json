@@ -103,10 +103,15 @@
         }
     },
     "ARENAS": {
-        "Arenas": "Arenas",
-        "Tiles": "Ladrilhos",
-        "Editor": "Editor",
-        "Code": "Código"
+        "INDEX": {
+            "Arenas": "Arenas",
+            "Tiles": "Ladrilhos",
+            "Editor": "Editor",
+            "Code": "Código"
+        },
+        "MESSAGE_WARNING": {
+            "<div class=\"alertinputcamp hidden\"></div>": "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\"><strong>AVISO!</strong> O tutorial de Arenas em portugues ainda não foi traduzido. Tradução em breve!<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>"
+        }
     },
     "ROBOTS": {
         "INDEX": {
