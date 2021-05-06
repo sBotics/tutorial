@@ -8,12 +8,6 @@ if (pathOrigin == "http://localhost" || deployState == false)
     pathOrigin = `${pathOrigin}/sBotics_Projetos/tutorial`;
 else pathOrigin = `${pathOrigin}/tutorial`;
 
-const TagController = (tagName, tagFunction) => {
-    document.createElement(tagName);
-    const tagInstances = document.getElementsByTagName(tagName);
-    for (var i = 0; i < tagInstances.length; i++) tagFunction(tagInstances[i]);
-};
-
 const LangValidate = (lang) => {
     const langSystem = navigator.language;
     var replaceLang = langSystem.replace("-", "_");
@@ -21,6 +15,18 @@ const LangValidate = (lang) => {
     if (langAvailable.indexOf(lang) != -1) return lang;
     if (langAvailable.indexOf(replaceLang) != -1) return replaceLang;
     else return "en";
+};
+
+$("a").each(function() {
+    var href = $(this).attr("href");
+    const language = LangValidate(paramLang);
+    if (href[0] != "#") $(this).attr("href", href + "?lang=" + language);
+});
+
+const TagController = (tagName, tagFunction) => {
+    document.createElement(tagName);
+    const tagInstances = document.getElementsByTagName(tagName);
+    for (var i = 0; i < tagInstances.length; i++) tagFunction(tagInstances[i]);
 };
 
 const InnerTextLangCreateAdvanced = (textSplit, textLength, JSON) => {
@@ -82,7 +88,11 @@ const Language = (elementTag) => {
     const textLength = textSplit.length;
     if (loadLang != "en") {
         $.getJSON(`${pathOrigin}/lang/${loadLang}.json`, function(JSON) {
-            const textInner = InnerTextLangCreateAdvanced(textSplit, textLength, JSON);
+            const textInner = InnerTextLangCreateAdvanced(
+                textSplit,
+                textLength,
+                JSON,
+            );
             if (textInner === undefined || textInner == "") {
                 PositionController(
                     positionTag,
