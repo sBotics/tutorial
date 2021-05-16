@@ -81,7 +81,8 @@
                 </lang>
             </p>
             <p>
-                <img src="../../images/guides/line_follower/coding_in.png " style="height: 50px; ">
+              <img src="../../images/guides/line_follower/coding_in.png " style="height: 50px; ">
+              <lang text='GUIDE:LINE_FOLLOWER:<div class="alertExampleEnglish_001 hidden"></div>'></lang> 
             </p>
             <p>
                 <lang text="GUIDE:LINE_FOLLOWER:Now let's make a simple program. To test, execute this very simple program that should make the robot move forward with strength value 60">
@@ -89,23 +90,23 @@
                 </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;forward(60)<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang> <br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
-                <lang text="GUIDE:LINE_FOLLOWER:As you can see, this didn't move the robot forward at all. And if it actually did, it was only for 1 milisecond. For the robot to move forward for <i>a period of time</i> instead of a fraction of a second, the state of the motor has to stay put for a while. In this case, we will use the <code>wait(number)</code> function.">
-                </lang>
+              <lang text="GUIDE:LINE_FOLLOWER:As you can see, this didn't move the robot forward at all. And if it actually did, it was only for 1 milisecond. For the robot to move forward for <i>a period of time</i> instead of a fraction of a second, the state of the motor has to stay put for a while. In this case, we will use the <code>wait(number)</code> function.">
+              </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;wait(2000)<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:wait"></lang>(2000)<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
-                <lang text="GUIDE:LINE_FOLLOWER:As you can see, the robot moved for 2 seconds (or 2000 miliseconds) before stopping the program.">
-                </lang>
+              <lang text="GUIDE:LINE_FOLLOWER:As you can see, the robot moved for 2 seconds (or 2000 miliseconds) before stopping the program.">
+              </lang>
             </p>
             <p>
                 <img src="../../images/guides/line_follower/run-stop.gif " style="height: 200px; ">
@@ -115,11 +116,11 @@
                 </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;}<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+              &nbsp;&nbsp;}<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
                 <lang text="GUIDE:LINE_FOLLOWER:The code above will repeat itself indefinitely, and it literally reads as" position="left">:</lang>
                 <lang text='GUIDE:LINE_FOLLOWER:"while the condition "true" is true, do"' position="left">.</lang>
@@ -128,12 +129,12 @@
                 </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;}<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              &nbsp;&nbsp;}<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
                 <img src="../../images/guides/line_follower/indefinitely.gif " style="height: 300px; ">
             </p>
@@ -142,15 +143,14 @@
                 </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(1, color(1))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(2, color(2))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;}<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(1, <lang text="CODE:REDUC:color"></lang>(1))<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(2, <lang text="CODE:REDUC:color"></lang>(2))<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              &nbsp;&nbsp;}<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
                 <lang text='GUIDE:LINE_FOLLOWER:To open the console window, click on the "terminal" icon present in the left sidebar'>
                 </lang>: <img src="../../images/guides/line_follower/console.png " style="height: 50px; " />
@@ -161,47 +161,48 @@
             </p>
             <p>
                 <img src="../../images/guides/line_follower/color values.gif " style="height: 300px; ">
+                <lang text='GUIDE:LINE_FOLLOWER:<div class="alertExampleEnglish_002 hidden"></div>'></lang> 
             </p>
             <p>
-                <lang text="GUIDE:LINE_FOLLOWER:With a simpler arena this time, let's make the robot turn turn right when the right sensor (1) perceives">
-                </lang>
-                <lang text='GUIDE:LINE_FOLLOWER:"BLACK". To do this, we will use the conditional if. <br /><b>Note!</b> Moving sideways causes more friction and the strength of the motors may have to be raised in contrast to their forward/backwards counterparts.'>
-                </lang>
+              <lang text="GUIDE:LINE_FOLLOWER:With a simpler arena this time, let's make the robot turn turn right when the right sensor (1) perceives">
+              </lang>
+              <lang text='GUIDE:LINE_FOLLOWER:"BLACK". To do this, we will use the conditional if. <br /><b>Note!</b> Moving sideways causes more friction and the strength of the motors may have to be raised in contrast to their forward/backwards counterparts.'>
+              </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(1, color(1))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(2, color(2))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(color(1) == "BLACK ") then {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-                    &nbsp;&nbsp;}<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(1, <lang text="CODE:REDUC:color"></lang>(1))<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(2, <lang text="CODE:REDUC:color"></lang>(2))<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:if"></lang>(<lang text="CODE:REDUC:color"></lang>(1) == "<lang text="CODE:REDUC:BLACK"></lang>") <lang text="CODE:REDUC:then"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:right"></lang>(200)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <lang text="CODE:REDUC:else"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+              &nbsp;&nbsp;}<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
                 <lang text="GUIDE:LINE_FOLLOWER:If you wish to use variables to store the color values and make your code slightly more efficient you can do so this way">
                 </lang>:
             </p>
             <code class=" d-block card mb-3 p-3 ">
-                    string rightS = " "<br/>
-                    string leftS = " "<br/><br/>
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;rightS = color(1)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;leftS = color(2)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(1, rightS)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;write(2, leftS)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS == "BLACK ") then {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-                    &nbsp;&nbsp;}<br/>
-                    end<br/>
-                </code>
+              <lang text="CODE:REDUC:string"></lang> <lang text="CODE:REDUC:rightS"></lang> = " "<br/>
+              <lang text="CODE:REDUC:string"></lang> <lang text="CODE:REDUC:leftS"></lang> = " "<br/><br/>
+              <lang text="CODE:REDUC:begin"></lang><br/>
+              &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;rightS = <lang text="CODE:REDUC:color"></lang>(1)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;leftS = <lang text="CODE:REDUC:color"></lang>(2)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(1, <lang text="CODE:REDUC:rightS"></lang>)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:write"></lang>(2, <lang text="CODE:REDUC:leftS"></lang>)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:if"></lang>(<lang text="CODE:REDUC:rightS"></lang> == "<lang text="CODE:REDUC:BLACK"></lang>") <lang text="CODE:REDUC:then"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:right"></lang>(200)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <lang text="CODE:REDUC:else"></lang> {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+              &nbsp;&nbsp;}<br/>
+              <lang text="CODE:REDUC:end"></lang><br/>
+            </code>
             <p>
                 <lang text="GUIDE:LINE_FOLLOWER:As you can see, now the robot follows the line (although only forwards and on right turns)">
                 </lang>:
@@ -216,22 +217,22 @@
                 </lang>
             </p>
             <code class="d-block card mb-3 p-3 ">
-                    number calibration = 30<br/>
-                    number rightS = 0<br/>
-                    number leftS = 0<br/><br/>
-                    begin<br/>
-                    &nbsp;&nbsp;while (true) do {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;rightS = light(1)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;leftS = light(2)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(1, rightS)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;writeNumber(2, leftS)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(rightS &#60; calibration) then {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right(200)<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forward(60)<br/>
+                    <lang text="CODE:REDUC:number"></lang> <lang text="CODE:REDUC:calibration"></lang> = 30<br/>
+                    <lang text="CODE:REDUC:number"></lang> <lang text="CODE:REDUC:rightS"></lang> = 0<br/>
+                    <lang text="CODE:REDUC:number"></lang> <lang text="CODE:REDUC:leftS"></lang> = 0<br/><br/>
+                    <lang text="CODE:REDUC:begin"></lang><br/>
+                    &nbsp;&nbsp;<lang text="CODE:REDUC:while"></lang> (<lang text="CODE:REDUC:true"></lang>) <lang text="CODE:REDUC:do"></lang> {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:rightS"></lang> = <lang text="CODE:REDUC:light"></lang>(1)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:leftS"></lang> = <lang text="CODE:REDUC:light"></lang>(2)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:writeNumber"></lang>(1, <lang text="CODE:REDUC:rightS"></lang>)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:writeNumber"></lang>(2, <lang text="CODE:REDUC:leftS"></lang>)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:if"></lang>(<lang text="CODE:REDUC:rightS"></lang> &#60; <lang text="CODE:REDUC:calibration"></lang>) <lang text="CODE:REDUC:entao"></lang> {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:right"></lang>(200)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <lang text="CODE:REDUC:else"></lang> {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lang text="CODE:REDUC:forward"></lang>(60)<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
                     &nbsp;&nbsp;}<br/>
-                    end
+                    <lang text="CODE:REDUC:end"></lang>
                 </code>
             <p>
                 <lang text="GUIDE:LINE_FOLLOWER:Now it's up to you to make a complete line-follower and more complex algorithms.">
