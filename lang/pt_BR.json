@@ -320,6 +320,7 @@
       "then": "entao",
       "else": "senao",
       "BLACK": "PRETO",
+      "WHITE": "BRANCO",
       "right": "direita",
       "string": "texto",
       "number": "numero",
