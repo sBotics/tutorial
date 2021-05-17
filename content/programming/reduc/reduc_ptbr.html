@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta
+      name="keywords"
+      content="simulação, sBotics, tutorial, tutorial sBotics"
+    />
+    <meta name="author" content="wEduc" />
+    <meta name="description" content="" />
+    <title>sBotics Tutorial</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../styles/style.css" />
+    <link rel="stylesheet" href="../../../styles/code.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="hamburger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-navigation hidden">
+      <div class="item logo-spot pt-2 pb-2">
+        <a href="../../../index.html">
+          <img src="../../../images/icon.png" />
+        </a>
+      </div>
+      <a href="../index.html" class="text item category cursor-pointer">
+        <lang text="MENU:Home page" />
+      </a>
+      <a
+        href="../guide/getting_started.html"
+        class="text item category cursor-pointer"
+      >
+        <lang text="MENU:Getting started" />
+      </a>
+      <a href="../arenas/index.html" class="text item category cursor-pointer">
+        <lang text="MENU:Arenas" />
+      </a>
+      <a href="../robots/index.html" class="text item category cursor-pointer">
+        <lang text="MENU:Robots" />
+      </a>
+      <a
+        href="../programming/index.html"
+        class="text item category cursor-pointer selected"
+      >
+        <lang text="MENU:Programming" />
+      </a>
+    </div>
+    <div class="content">
+      <div class="jumbotron">
+        <div class="text-left">
+          <h3 class="mb-0 font-weight-bold">
+            <lang text="PROGRAMMING:REDUC_PTBR:Language rEduc pt-BR"></lang>
+          </h3>
+          <p>
+            <lang text="PROGRAMMING:REDUC_PTBR:guide[{:}]language rEduc"></lang>
+          </p>
+        </div>
+        <hr class="my-4" />
+        <div class="p-3">
+          <h5 class="font-weight-bold">
+            <lang text="PROGRAMMING:REDUC_PTBR:Table of contents"></lang>:
+          </h5>
+          <ol class="mb-0">
+            <a href="#startup">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Startup"></lang>
+              </li>
+            </a>
+            <a href="#ifdoelse">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Se - Então - Senão"></lang>
+              </li>
+            </a>
+            <a href="#authentication">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Enquanto - Farei"></lang>
+              </li>
+            </a>
+            <a href="#generating">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Farei - Enquanto"></lang>
+              </li>
+            </a>
+            <a href=" #choosing ">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Repita"></lang>
+              </li>
+            </a>
+            <a href="#choosing-pl ">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Para"></lang>
+              </li>
+            </a>
+            <a href="#choosing-pl ">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Teste"></lang>
+              </li>
+            </a>
+            <a href="#choosing-pl ">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Tarefas"></lang>
+              </li>
+            </a>
+            <a href="#next ">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Types of data"></lang>
+              </li>
+            </a>
+          </ol>
+        </div>
+        <!-- Inicialização -->
+        <h3 class="mt-3" id="startup">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Startup"></lang></b>
+        </h3>
+        <p>
+          Todo programa deve começar com <code class="codeS">inicio</code> e
+          terminar com <code class="codeS">fim</code>.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;comandos<br />
+          fim<br />
+        </code>
+        <p>Vamos testar escrevendo o seguinte programa:</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Olá sBotics!")</a
+          ><br />
+          fim<br />
+        </code>
+        <p>
+          Após salvar e compilar, clique em "Testar Rotina". O texto
+          <code class="codeS">"Olá sBotics!"</code> deve aparecer na linha 1 do
+          console virtual.
+        </p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-exclamation-circle bi flex-shrink-0 me-2"
+            aria-label="Danger:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+            Todo texto deve ser escrito entre aspas duplas!
+          </div>
+        </div>
+        <p>
+          Para realizar movimentações, devemos utilizar alguma das funções de
+          movimentação apresentadas na aba
+          <a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr"
+            target="_blank"
+            >funções do Robô</a
+          >
+          desde tutorial.
+        </p>
+        <p>
+          Vamos testar a movimentação do robô escrevendo o seguinte programa:
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente"
+            target="_blank"
+            >frente(100)</a
+          ><br />
+          &nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar"
+            target="_blank"
+            >esperar(1000)</a
+          ><br />
+          fim<br />
+        </code>
+        <p>
+          Após salvar e compilar, clique em "Testar Rotina". O seu robô deve ir
+          para frente, com velocidade 100 por 1000 milissegundos (1 segundo).
+        </p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-exclamation-circle bi flex-shrink-0 me-2"
+            aria-label="Danger:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+            As funções de movimentação do robô apenas acionam os motores em um
+            determinado sentido. Para garantir que aquela movimentação ocorra
+            por um determinado tempo é necessário utilizar o comando
+            <code class="codeS"
+              ><a
+                href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar"
+                target="_blank"
+                >esperar</a
+              ></code
+            >.
+          </div>
+        </div>
+
+        <!-- Se Então Senao -->
+        <h3 class="mt-3" id="ifdoelse">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Se - Então - Senão"></lang></b>
+        </h3>
+        <p>
+          Se quiser verificar se dois textos são iguais ou diferentes, ou ver se
+          dois números são iguais, diferentes, maiores ou menores que o outro, é
+          possível usar a estrutura <code class="codeS">se</code>.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (condição) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;comandos<br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>
+          Vamos testar a estrutura condicional escrevendo os dois programas a
+          seguir:
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se ("isso" == "isso") entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Olá sBotics!")</a
+          ><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>
+          Note que <code class="codeS">==</code> foi utilizado para comparar os
+          dois textos. No exemplo 2, faremos a comparação entre dois números em
+          nossa condição.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (3 > 1) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Três é maior que um!")</a
+          ><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>
+          Se os programas dos dois exemplos foram escritos corretamente, ao
+          executar as rotinas os textos aparecerão na linha 1 do console.
+        </p>
+        <p>
+          Teste vários exemplos utilizando se com condições e valores
+          diferentes, mas leve em conta que:
+        </p>
+        <p>
+          <code class="codeS">&nbsp;>&nbsp;</code> - Compara se é maior que<br />
+          <code class="codeS">&nbsp;<&nbsp;</code> - Compara se é menor que<br />
+          <code class="codeS">&nbsp;>=&nbsp;</code> - Compara se é maior ou
+          igual que<br />
+          <code class="codeS">&nbsp;<=&nbsp;</code> - Compara se é menor ou
+          igual que<br />
+          <code class="codeS">&nbsp;==&nbsp;</code> - Compara se é igual<br />
+          <code class="codeS">&nbsp;!=&nbsp;</code> - Compara se é diferente
+        </p>
+        <p>
+          É possível realizar um outro conjunto de comandos caso a condição não
+          seja satisfeita. Para isso podemos utilizar o comando
+          <code class="codeS">senao</code>.
+        </p>
+        <p>Teste o seguinte programa:</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (3 > 1) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Três é maior que um!")</a
+          ><br />
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Três não é maior que um!")</a
+          ><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>
+          Observe que o texto
+          <code class="codeS">"Três não é maior que um!"</code> nunca vai ser
+          escrito no console, pois a condição
+          <code class="codeS">&nbsp;3 > 1&nbsp;</code> sempre será satisfeita.
+        </p>
+        <p>
+          Agora substitua a condição para <code class="codeS">&nbsp;3 < 1&nbsp;</code> e observe que o texto <code class="codeS">"Três não
+          é maior que um!"</code> será escrito no console, pois a condição não será
+          satisfeita.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (3 < 1) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Três é maior que um!")</a
+          ><br />
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever"
+            target="_blank"
+            >escrever(1, "Três não é maior que um!")</a
+          ><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>Agora vamos testar a estrutura condicional com duas ou mais condições, para isso devemos utilizar as conjunções <code class="codeS">e/ou</code>.</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> == "PRETO" e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> == "PRETO") entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> é PRETO e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> é PRETO")</a><br />
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> não é PRETO ou <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> não é PRETO")</a><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>Se o programa for escrito corretamente, ao executar a rotina um texto aparecerá na linha 1 do console.</p>
+        <p>Agora vamos refazer o teste anterior verificando mais uma condição caso as primeiras não sejam satisfeitas:</p>
+        <!-- <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;se (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> == "PRETO" e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> == "PRETO") entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> é PRETO e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> é PRETO")</a><br />
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> não é PRETO ou <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> não é PRETO")</a><br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code> -->
+      </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="../../../scripts/require.js "></script>
+    <script src="../../../scripts/main.js "></script>
+    <script src="../../../scripts/language.js "></script>
+  </body>
+</html>

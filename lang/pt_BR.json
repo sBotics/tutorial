@@ -300,7 +300,46 @@
     }
   },
   "PROGRAMMING": {
-    "Programming": "Programação",
+    "INDEX": {
+      "Programming": "Programação",
+      "BlockEduc": "BlockEduc",
+      "rEduc": "rEduc",
+      "C#": "C#",
+      "Programming language": "Linguagem de programação",
+      "MENU": {
+        "rEduc EN": "rEduc EN",
+        "rEduc pt-BR": "rEduc pt-BR",
+        "Getting started with rEduc": "Introdução ao rEduc"
+      }
+    },
+    "REDUC_PTBR": {
+      "Language rEduc pt-BR": "Linguagem rEduc pt-BR",
+      "guide:language rEduc pt-BR": "guia:Linguagem rEduc pt-BR",
+      "Table of contents": "Índice",
+      "Startup": "Inicialização",
+      "Se - Então - Senão": "Se - Então - Senão",
+      "Enquanto - Farei": "Enquanto - Farei",
+      "Farei - Enquanto": "Farei - Enquanto",
+      "Repita": "Repita",
+      "Para": "Para",
+      "Teste": "Teste",
+      "Tarefas": "Tarefas",
+      "Types of data": "Tipos de dados"
+    },
+    "REDUC_EN": {
+      "Language rEduc EN": "Linguagem rEduc EN",
+      "guide:language rEduc EN": "guia:Linguagem rEduc EN",
+      "Table of contents": "Índice",
+      "Startup": "Startup",
+      "If - Then - Else": "If - Then - Else",
+      "While - Do": "While - Do",
+      "Do - While": "Do - While",
+      "Repeat": "Repeat",
+      "For": "For",
+      "Test": "Test",
+      "Task": "Task",
+      "Types of data": "Tipos de dados"
+    },
     "Coming soon": "Em breve"
   },
   "CODE": {

@@ -1,5 +1,7 @@
 const pathParams = new URLSearchParams(window.location.search);
 const paramLang = pathParams.get("lang");
+var paramForceLang = pathParams.get("force");
+if (paramForceLang == "" || paramForceLang == null) paramForceLang = "false";
 
 var pathOrigin = window.location.origin;
 const deployState = true;
@@ -13,14 +15,16 @@ const LangValidate = (lang) => {
   var replaceLang = langSystem.replace("-", "_");
   var langAvailable = ["pt_BR"];
   if (langAvailable.indexOf(lang) != -1) return lang;
-  if (langAvailable.indexOf(replaceLang) != -1) return replaceLang;
+  if (langAvailable.indexOf(replaceLang) != -1 && paramForceLang == "false")
+    return replaceLang;
   else return "en";
 };
 
 $("a").each(function () {
   var href = $(this).attr("href");
   const language = LangValidate(paramLang);
-  if (href[0] != "#") $(this).attr("href", href + "?lang=" + language);
+  force = paramForceLang == "true" ? "&force=true" : "";
+  if (href[0] != "#") $(this).attr("href", href + "?lang=" + language + force);
 });
 
 const TagController = (tagName, tagFunction) => {
