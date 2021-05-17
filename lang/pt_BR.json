@@ -324,7 +324,9 @@
       "Para": "Para",
       "Teste": "Teste",
       "Tarefas": "Tarefas",
-      "Types of data": "Tipos de dados"
+      "Types of data": "Tipos de dados",
+      "Arithmetic operators": "Operadores aritméticos",
+      "Comments": "Comentários"
     },
     "REDUC_EN": {
       "Language rEduc EN": "Linguagem rEduc EN",
@@ -338,7 +340,9 @@
       "For": "For",
       "Test": "Test",
       "Task": "Task",
-      "Types of data": "Tipos de dados"
+      "Types of data": "Tipos de dados",
+      "Arithmetic operators": "Operadores aritméticos",
+      "Comments": "Comentários"
     },
     "Coming soon": "Em breve"
   },

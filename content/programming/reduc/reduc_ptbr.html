@@ -128,9 +128,19 @@
                 <lang text="PROGRAMMING:REDUC_PTBR:Tarefas"></lang>
               </li>
             </a>
-            <a href="#next ">
+            <a href="#typesofdata">
               <li>
                 <lang text="PROGRAMMING:REDUC_PTBR:Types of data"></lang>
+              </li>
+            </a>
+            <a href="#arithmeticoperators">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Arithmetic operators"></lang>
+              </li>
+            </a>
+            <a href="#comments">
+              <li>
+                <lang text="PROGRAMMING:REDUC_PTBR:Comments"></lang>
               </li>
             </a>
           </ol>
@@ -521,6 +531,142 @@
           fim<br />
         </code>
 
+        <!-- Teste -->
+        <h3 class="mt-3" id="teste">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Teste"></lang></b>
+        </h3>
+        <p>
+          A estrutura teste da linguagem R-Educ representa um comando de seleção. A utilização desta estrutura faz com que o valor de uma variável do tipo texto seja avaliada e dependendo de seu valor uma determinada sequência de comandos seja realizada. No código abaixo a variável testada foi chamada de variavel e caso o seu valor seja igual a valor1 a sequência de comandos denominada no código como comandos1 será executada, caso seu valor seja igual a valor2 o conjunto comandos2 será executado. Caso seu valor não seja nenhum dos apresentados a sequência de comandos denominada de comandos3 será executada.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;este (variavel) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;caso valor1:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comandos1<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;caso valor2:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comandos2<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;outros:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comandos3<br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>
+          Para testar essa estrutura vamos escrever um programa que avalia a leitura do sensor de cor 2 e realiza escritas no console dependendo do valor lido:
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          texto minhaLeitura = "Aguardando leitura."<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;minhaLeitura = <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">cor(2)</a><br />
+          &nbsp;&nbsp;teste (minhaLeitura) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;caso "PRETO":<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1,"Meu sensor leu Preto.")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;caso "BRANCO":<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1,"Meu sensor leu Branco.")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;outros:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1,"Meu sensor leu:")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(2, <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">cor(2)</a>)</a><br />          
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-info-circle bi flex-shrink-0 me-2"
+            aria-label="info:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+              As cores podem ser “VERMELHO”, “VERDE”, “AZUL”, “AMARELO”, “PRETO” e “BRANCO”.
+            </div>
+        </div>
+        <p>No programa acima a estrutura verifica a leitura do sensor de cor 2, armazenada na variável minhaLeitura retornou "PRETO", "BRANCO" ou outro valor.</p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-exclamation-circle bi flex-shrink-0 me-2"
+            aria-label="Danger:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+            A variável utilizada na estrutura teste deve ser sempre uma varíavel do tipo texto.
+          </div>
+        </div>
+
+        <!-- Tarefas -->
+        <h3 class="mt-3" id="tarefas">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Tarefas"></lang></b>
+        </h3>
+        <p>
+          Um programa escrito em R-Educ pode conter tarefas: conjunto de comandos nomeados que também são chamados de funções, procedimentos ou sub-rotinas. 
+        </p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-exclamation-circle bi flex-shrink-0 me-2"
+            aria-label="Danger:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+            Para que esta estrutura seja utilizada ela deve ser definida antes do início do programa.
+          </div>
+        </div>
+        <p>A declaração de uma tarefa com nome "funcao" por exemplo, é feita como segue:</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          tarefa funcao{<br />
+          &nbsp;&nbsp;comandos<br />
+          }<br />
+        </code>
+        <p>
+         Ao declarar uma tarefa a sequência de comandos contida nela não será executada. Para que a execução de seus comandos seja realizada é necessário que o seu nome seja chamado da seguinte forma:
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          funcao()
+        </code>
+        <p>A seguir apresentamos um exemplo de definição e utilização de uma tarefa. No exemplo chamaremos a tarefa de minhaTarefa.</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          tarefa minhaTarefa{<br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar" target="_blank">esperar(1000)</a><br />  
+          }<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;minhaTarefa()<br />
+          fim<br />
+        </code>
+        <p>Ao executar esta rotina podemos observar que os comandos inseridos na tarefa serão executados.</p>
+      
+        <!-- Tipos de dados -->
+        <h3 class="mt-3" id="typesofdata">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Types of data"></lang></b>
+        </h3>
+
+        <!-- Operadores aritméticos -->
+        <h3 class="mt-3" id="arithmeticoperators">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Arithmetic operators"></lang></b>
+        </h3>
+        <p>Para realizar operações aritméticas básicas em R-Educ podem ser utilizados os símbolos <code class="codeS">&nbsp;+&nbsp;</code>, <code class="codeS">&nbsp;-&nbsp;</code>, <code class="codeS">&nbsp;*&nbsp;</code> e <code class="codeS">&nbsp;/&nbsp;</code> em números ou variáveis do tipo numero em qualquer lugar onde elas são manipuladas. Alguns outros tipos de operações matemáticas podem ser realizadas a partir da realização de sucessivas operações ou utilizando as funções disponíveis.</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          numero variavel = 100<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;variavel = variavel + <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">luz(1)</a><br/>
+          &nbsp;&nbsp;se(variavel *100 > 100) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />  
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar" target="_blank">esperar(1000)</a><br />  
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+
+
+        <!-- Comments -->
+        <h3 class="mt-3" id="comments">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Comments"></lang></b>
+        </h3>
+      
       </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
