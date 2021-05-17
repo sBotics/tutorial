@@ -1,9 +1,17 @@
 .codeS {
-    font-family: "Fira Code", monospace;
-    font-weight: bold;
-    background-color: #282a36;
-    color: #eea826;
-    padding: 2px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 8px rgb(31 31 31 / 55%);
+  font-family: "Fira Code", monospace;
+  font-weight: bold;
+  background-color: #282a36;
+  color: #eea826;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(31 31 31 / 55%);
+}
+.codeX{
+  font-weight: bold;
+  background-color: #282a36;
+  color: #eea826;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(31 31 31 / 55%);
 }
