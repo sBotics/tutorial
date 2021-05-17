@@ -295,7 +295,7 @@
           <code class="codeX">&nbsp;<=&nbsp;</code> - Compara se é menor ou
           igual que<br />
           <code class="codeX">&nbsp;==&nbsp;</code> - Compara se é igual<br />
-          <code class="codeS">&nbsp;!=&nbsp;</code> - Compara se é diferente
+          <code class="codeX">&nbsp;!=&nbsp;</code> - Compara se é diferente
         </p>
         <p>
           É possível realizar um outro conjunto de comandos caso a condição não
@@ -394,7 +394,7 @@
           <b><lang text="PROGRAMMING:REDUC_PTBR:Enquanto - Farei"></lang></b>
         </h3>
         <p>
-          A estrutura enquanto da linguagem R-Educ representa uma estrutura de repetição condicional. A ideia básica é fazer com que a execução de uma série de comandos seja repetida enquanto uma determinada condição for satisfeita. Quando a condição não for mais satisfeita a repetição será finalizada.
+          A estrutura enquanto da linguagem rEduc representa uma estrutura de repetição condicional. A ideia básica é fazer com que a execução de uma série de comandos seja repetida enquanto uma determinada condição for satisfeita. Quando a condição não for mais satisfeita a repetição será finalizada.
         </p>
         <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
@@ -423,7 +423,7 @@
           <b><lang text="PROGRAMMING:REDUC_PTBR:Farei - Enquanto"></lang></b>
         </h3>
         <p>
-          A estrutura farei da linguagem R-Educ representa uma estrutura de repetição condicional, assim como o enquanto apresentado anteriormente. A única diferença entre esta estrutura e a anterior é que nesta, primeiro a sequência de comandos é realizada e, em seguida, a condição é avaliada, caso a condição seja satisfeita os comandos serão executados novamente.
+          A estrutura farei da linguagem rEduc representa uma estrutura de repetição condicional, assim como o enquanto apresentado anteriormente. A única diferença entre esta estrutura e a anterior é que nesta, primeiro a sequência de comandos é realizada e, em seguida, a condição é avaliada, caso a condição seja satisfeita os comandos serão executados novamente.
         </p>
         <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
@@ -438,6 +438,38 @@
         <code class="d-block card mb-3 p-3">
           inicio<br />
           &nbsp;&nbsp;farei {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />
+          &nbsp;&nbsp;}enquanto (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/ultra" target="_blank">ultra(1)</a> > 50) <br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">parar()</a> <br /> 
+          fim<br />
+        </code>
+        <p>
+         Ao testar essa rotina podemos observar que a movimentação do robô será acionada para frente enquanto o sensor de ultrassom 1 não detectar um obstáculo a uma distância menor ou igual que 50. Quando a condição não for mais satisfeita a movimentação será interrompida.
+        </p>
+        <p>
+         A utilização dessa estrutura garante que a sequência de comandos seja realizada ao menos uma vez, ainda que a condição não seja satisfeita.
+        </p>
+
+        <!-- Repita -->
+        <h3 class="mt-3" id="repita">
+          <b><lang text="PROGRAMMING:REDUC_PTBR:Repita"></lang></b>
+        </h3>
+        <p>
+         A estrutura repita da linguagem rEduc representa uma estrutura de repetição contada. A utilização desta estrutura faz com que um conjunto de comandos seja executado por uma quantidade determinada de vezes. Abaixo apresentamos como deve ser utilizada esta estrutura para que um conjunto de comando seja executado 4 vezes.
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;repita 4 vezes {<br />
+          &nbsp;&nbsp;comandos<br />
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>Vamos testar escrevendo o seguinte programa:</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          inicio<br />
+          &nbsp;&nbsp;repita 4 vezes {<br />
           &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />
           &nbsp;&nbsp;}enquanto (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/ultra" target="_blank">ultra(1)</a> > 50) <br />
           &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">parar()</a> <br /> 
