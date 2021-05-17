@@ -361,6 +361,17 @@
           &nbsp;&nbsp;}<br />
           fim<br />
         </code>
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-info-circle bi flex-shrink-0 me-2"
+            aria-label="info:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+              As cores podem ser “VERMELHO”, “VERDE”, “AZUL”, “AMARELO”, “PRETO” e “BRANCO”.
+            </div>
+        </div>
         <p>Se o programa for escrito corretamente, ao executar a rotina um texto aparecerá na linha 1 do console.</p>
         <p>Agora vamos refazer o teste anterior verificando mais uma condição caso as primeiras não sejam satisfeitas:</p>
         <h6><b>Exemplo:</b></h6>
@@ -461,26 +472,14 @@
         <code class="d-block card mb-3 p-3">
           inicio<br />
           &nbsp;&nbsp;repita 4 vezes {<br />
-          &nbsp;&nbsp;comandos<br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar" target="_blank">esperar(1000)</a><br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/direita" target="_blank">direita(100)</a><br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esquerda" target="_blank">esquerda(1000)</a><br />
           &nbsp;&nbsp;}<br />
           fim<br />
         </code>
-        <p>Vamos testar escrevendo o seguinte programa:</p>
-        <h6><b>Exemplo:</b></h6>
-        <code class="d-block card mb-3 p-3">
-          inicio<br />
-          &nbsp;&nbsp;repita 4 vezes {<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">frente(100)</a><br />
-          &nbsp;&nbsp;}enquanto (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/ultra" target="_blank">ultra(1)</a> > 50) <br />
-          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/frente" target="_blank">parar()</a> <br /> 
-          fim<br />
-        </code>
-        <p>
-         Ao testar essa rotina podemos observar que a movimentação do robô será acionada para frente enquanto o sensor de ultrassom 1 não detectar um obstáculo a uma distância menor ou igual que 50. Quando a condição não for mais satisfeita a movimentação será interrompida.
-        </p>
-        <p>
-         A utilização dessa estrutura garante que a sequência de comandos seja realizada ao menos uma vez, ainda que a condição não seja satisfeita.
-        </p>
+        
       </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
