@@ -355,24 +355,38 @@
         <code class="d-block card mb-3 p-3">
           inicio<br />
           &nbsp;&nbsp;se (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> == "PRETO" e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> == "PRETO") entao {<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> é PRETO e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> é PRETO")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "cor(1) é PRETO e cor(2) é PRETO")</a><br />
           &nbsp;&nbsp;} senao {<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> não é PRETO ou <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> não é PRETO")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "cor(1) não é PRETO ou cor(2) não é PRETO")</a><br />
           &nbsp;&nbsp;}<br />
           fim<br />
         </code>
         <p>Se o programa for escrito corretamente, ao executar a rotina um texto aparecerá na linha 1 do console.</p>
         <p>Agora vamos refazer o teste anterior verificando mais uma condição caso as primeiras não sejam satisfeitas:</p>
-        <!-- <h6><b>Exemplo:</b></h6>
+        <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
           inicio<br />
-          &nbsp;&nbsp;se (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> == "PRETO" e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> == "PRETO") entao {<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> é PRETO e <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> é PRETO")</a><br />
+          &nbsp;&nbsp;se ((<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/luz" target="_blank">luz(1)</a> > 10) e (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/luz" target="_blank">luz(2)</a> < 10)) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "luz(1) é maior que 10 e luz(2) é menor que 10")</a><br />
+          &nbsp;&nbsp;}senao se ((<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/luz" target="_blank">luz(1)</a> < 10) e (<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/luz" target="_blank">luz(2)</a> > 10)) entao{<br />       
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "luz(1) é menor que 10 e luz(2) é maior que 10")</a><br />  
           &nbsp;&nbsp;} senao {<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a> não é PRETO ou <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(2)</a> não é PRETO")</a><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, "luz(1) é maior que 10 e luz(2) é maior que 10")</a><br />  
           &nbsp;&nbsp;}<br />
           fim<br />
-        </code> -->
+        </code>
+        <p>Se o programa for escrito corretamente, ao executar a rotina um texto aparecerá na linha 1 do console.</p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i
+            class="fas fa-exclamation-circle bi flex-shrink-0 me-2"
+            aria-label="Danger:"
+            width="24"
+            height="24"
+          ></i>
+          <div class="ml-3">
+            é indicado utilizar parênteses <code class="codeS">()</code> para delimitar cada uma das condições.
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
