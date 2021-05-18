@@ -108,7 +108,7 @@
                 <lang text="PROGRAMMING:REDUC_PTBR:Farei - Enquanto"></lang>
               </li>
             </a>
-            <a href="#Repita">
+            <a href="#repita">
               <li>
                 <lang text="PROGRAMMING:REDUC_PTBR:Repita"></lang>
               </li>
@@ -150,8 +150,8 @@
           <b><lang text="PROGRAMMING:REDUC_PTBR:Startup"></lang></b>
         </h3>
         <p>
-          Todo programa deve começar com <code class="codeS">inicio</code> e
-          terminar com <code class="codeS">fim</code>.
+          Todo programa deve começar com <code class="codeS">&nbsp;inicio&nbsp;</code> e
+          terminar com <code class="codeS">&nbsp;fim&nbsp;</code>.
         </p>
         <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
@@ -172,7 +172,7 @@
         </code>
         <p>
           Após salvar e compilar, clique em "Testar Rotina". O texto
-          <code class="codeS">"Olá sBotics!"</code> deve aparecer na linha 1 do
+          <code class="codeS">&nbsp;"Olá sBotics!"&nbsp;</code> deve aparecer na linha 1 do
           console virtual.
         </p>
         <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -246,7 +246,7 @@
         <p>
           Se quiser verificar se dois textos são iguais ou diferentes, ou ver se
           dois números são iguais, diferentes, maiores ou menores que o outro, é
-          possível usar a estrutura <code class="codeS">se</code>.
+          possível usar a estrutura <code class="codeS">&nbsp;se&nbsp;</code>.
         </p>
         <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
@@ -273,7 +273,7 @@
           fim<br />
         </code>
         <p>
-          Note que <code class="codeS">==</code> foi utilizado para comparar os
+          Note que <code class="codeS">&nbsp;==&nbsp;</code> foi utilizado para comparar os
           dois textos. No exemplo 2, faremos a comparação entre dois números em
           nossa condição.
         </p>
@@ -310,7 +310,7 @@
         <p>
           É possível realizar um outro conjunto de comandos caso a condição não
           seja satisfeita. Para isso podemos utilizar o comando
-          <code class="codeS">senao</code>.
+          <code class="codeS">&nbsp;senao&nbsp;</code>.
         </p>
         <p>Teste o seguinte programa:</p>
         <h6><b>Exemplo:</b></h6>
@@ -360,7 +360,7 @@
           &nbsp;&nbsp;}<br />
           fim<br />
         </code>
-        <p>Agora vamos testar a estrutura condicional com duas ou mais condições, para isso devemos utilizar as conjunções <code class="codeS">e/ou</code>.</p>
+        <p>Agora vamos testar a estrutura condicional com duas ou mais condições, para isso devemos utilizar as conjunções <code class="codeS">&nbsp;e/ou&nbsp;</code>.</p>
         <h6><b>Exemplo:</b></h6>
         <code class="d-block card mb-3 p-3">
           inicio<br />
@@ -638,11 +638,66 @@
           fim<br />
         </code>
         <p>Ao executar esta rotina podemos observar que os comandos inseridos na tarefa serão executados.</p>
-      
+
+
         <!-- Tipos de dados -->
         <h3 class="mt-3" id="typesofdata">
           <b><lang text="PROGRAMMING:REDUC_PTBR:Types of data"></lang></b>
         </h3>
+        <p>
+          A linguagem rEduc opera sobre três tipos de dados: <code class="codeS">&nbsp;texto&nbsp;</code>, <code class="codeS">&nbsp;numero&nbsp;</code> e <code class="codeS">&nbsp;booleano&nbsp;</code>. As variáveis devem ser definidas sempre antes do <code class="codeS">&nbsp;inicio&nbsp;</code> e fora das <code class="codeS">&nbsp;tarefas&nbsp;</code>.
+        </p>
+        <p>
+          O tipo de dado <code class="codeS">&nbsp;texto&nbsp;</code> manipula variáveis do tipo String, que são sequências de símbolos e caracteres separados ou não por espaços e delimitados por aspas duplas.
+        </p>
+        <p>
+          No programa a seguir, definimos uma variável do tipo <code class="codeS">&nbsp;texto&nbsp;</code> com o nome <code class="codeS">&nbsp;minhaVariavel&nbsp;</code> e conteúdo <code class="codeS">&nbsp;"Esse é meu texto!"&nbsp;</code>.   
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          texto minhaVariavel = "Esse é meu texto!"<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, minhaVariavel)</a><br />          
+          fim<br />
+        </code>
+        <p>
+          Ao ser executada a rotina o conteúdo da variável será escrito na linha 1 do console. Podemos também utilizar as variáveis para armazenar o valor da leitura do sensor de cor que retorna um texto, por exemplo: 
+        </p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          texto minhaVariavel = "Esperando leitura"<br /><br />
+          inicio<br />
+           &nbsp;&nbsp;minhaVariavel = <a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/cor" target="_blank">cor(1)</a><br />
+          &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(1, minhaVariavel)</a><br />          
+          fim<br />
+        </code>
+        <p>Ao ser executado, este programa fará a leitura do sensor de cor 1, armazenará o valor lido em minhaVariavel e imprimirá seu valor na linha 1 do console.</p>
+        <p>O tipo de dado  <code class="codeS">&nbsp;numero&nbsp;</code> manipula variáveis do tipo double, números que podem assumir valores inteiros ou em ponto flutuante. Abaixo temos um exemplo da criação de uma variável do tipo numero com nome comparacao e conteúdo 3.</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          numero comparacao = 3<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;se(comparacao > 5) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(2, "O valor da variável é maior que 5")</a><br />          
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(2, "O valor da variável é menor que 5")</a><br />      
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>Ao ser executado, este programa irá verificar se o valor armazenado na variável comparacao é maior do que 5, caso seja o texto "O valor da variável é maior que 5" será escrito na linha 2 do console.</p>
+        <p>O tipo de dado <code class="codeS">&nbsp;booleano&nbsp;</code> manipula variáveis lógicas do tipo verdadeiro ou falso. Abaixo temos um exemplo da criação de uma variável do tipo booleano com nome variavel e conteúdo verdadeiro.</p>
+        <h6><b>Exemplo:</b></h6>
+        <code class="d-block card mb-3 p-3">
+          booleano minhaVariavel = verdadeiro<br /><br />
+          inicio<br />
+          &nbsp;&nbsp;se(minhaVariavel == verdadeiro) entao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(2, "minhaVariavel é verdadeira")</a><br />          
+          &nbsp;&nbsp;} senao {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/escrever" target="_blank">escrever(2, "minhaVariavel é falsa")</a><br />      
+          &nbsp;&nbsp;}<br />
+          fim<br />
+        </code>
+        <p>Ao ser executado, este programa irá verificar se o valor armazenado na variável é verdadeiro, caso seja, o texto "minhaVariavel é verdadeira" será escrito na linha 1 do console.</p>
 
         <!-- Operadores aritméticos -->
         <h3 class="mt-3" id="arithmeticoperators">
@@ -677,7 +732,7 @@
           &nbsp;&nbsp;<a href="http://sbotics.weduc.natalnet.br/functions/reduc_ptbr/esperar" target="_blank">esperar(1000)</a><br />  
           fim<br />
         </code>
-        <p>Ao ser executado, este programa irá apenas realizar uma espera de 1000 milissegundos antes de finalizar, isso ocorre pois devido a presença do caracter <code class="codeS">#</code> antes do comando <code class="codeS">frente(100)</code> este será ignorado não sendo executado pelo robô.</p>
+        <p>Ao ser executado, este programa irá apenas realizar uma espera de 1000 milissegundos antes de finalizar, isso ocorre pois devido a presença do caracter <code class="codeS">&nbsp;#&nbsp;</code> antes do comando <code class="codeS">&nbsp;frente(100)&nbsp;</code> este será ignorado não sendo executado pelo robô.</p>
       </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
